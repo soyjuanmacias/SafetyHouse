@@ -1,9 +1,8 @@
 const app = require('express')()
+const index = require('./routes/index')
 
 require('./config/passport')()
 require('./config/express')(app)
-
-const index = require('./routes/index')
 
 app.use('/', index)
 

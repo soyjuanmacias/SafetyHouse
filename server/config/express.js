@@ -34,8 +34,6 @@ module.exports = function(app) {
   app.use(function(req, res, next) {
     res.locals.user = req.user;
     res.locals.title = 'BASIC BOILERPLATE!!!'
-    console.log('Imprimo res.locals.users =>');
-    console.log(res.locals.user);
     next()
   })
 }
