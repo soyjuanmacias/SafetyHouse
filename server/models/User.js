@@ -13,7 +13,8 @@ const userSchema = new Schema({
       'Admin',
       'Security',
       'User'
-    ]
+    ],
+    default: 'User'
   }
 }, {
   timestamps: {

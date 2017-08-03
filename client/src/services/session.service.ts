@@ -7,17 +7,18 @@ import { environment } from '../environments/environment';
 
 export interface User{
   _id:string,
-  username:string,
-  updated_at:Date,
-  created_at:Date
+  username: string,
+  password: string,
+  updated_at: Date,
+  created_at: Date
 }
 
 @Injectable()
 export class SessionService {
-  user:User; // The current logged in user
-  startLoginCompleted:boolean = false;
-  BASE_URL:string=`${environment.BASE_URL}/api/auth`;
-  options:object = {withCredentials:true};
+  user: User; // The current logged in user
+  startLoginCompleted: boolean = false;
+  BASE_URL: string=`${environment.BASE_URL}/auth`;
+  options: object = {withCredentials:true};
 
   constructor(private http:Http) {
     this.isLoggedIn().subscribe( (user:User) =>{
@@ -28,6 +29,7 @@ export class SessionService {
   }
 
   handleError(e) {
+    console.log('ERROR => '+e)
     console.error("Error en la llamada a la API");
     return Observable.throw(e.json().message);
   }
