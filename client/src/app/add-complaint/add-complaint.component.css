@@ -1,0 +1,9 @@
+.complaint-element {
+  border: 2px solid grey;
+  margin: 20px;
+  width: 400px;
+}
+
+.add-complaint-form {
+  display: block;
+}

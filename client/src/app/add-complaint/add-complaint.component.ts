@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-add-complaint',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComplaintComponent implements OnInit {
 
-  constructor() { }
+  newComplaint: Object = {
+    user: this.session.user._id
+  }
+  constructor(private session: SessionService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  addComplaint() {
+    console.log(this.newComplaint)
   }
 
 }

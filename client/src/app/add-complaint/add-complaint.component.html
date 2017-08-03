@@ -1,4 +1,16 @@
 <a [routerLink]="['']"> Go back </a>
-<p>
-  add-complaint works!
-</p>
+<div class="newComplaint col s5">
+  <div>
+    <label>Título de la denuncia:</label>
+    <input type="text" [(ngModel)]="newComplaint.title">
+  </div>
+  <div>
+    <label for="complaint-description">Describe los hechos:</label>
+    <input type="text" [(ngModel)]="newComplaint.description">
+  </div>
+  <div>
+    <label>Img Url:</label>
+    <input class="add-complaint-form" type="text" [(ngModel)]="newComplaint.image">
+  </div>
+  <button class="btn" (click)="addComplaint()">Enviar</button>
+</div>

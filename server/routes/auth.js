@@ -92,8 +92,6 @@ function ensureLoginOrJsonError(error = "Unauthorized") {
 
 /* Check if user is logged in and returns the user or shows error as JSON instead*/
 authRoutes.get('/loggedin', ensureLoginOrJsonError(), (req, res, next) => {
-  console.log('Entro en LOGGEDIN');
-  console.log(req.user);
   return res.status(200).json(req.user);
 });
 
