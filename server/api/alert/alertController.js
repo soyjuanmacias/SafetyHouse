@@ -35,8 +35,23 @@ module.exports = {
   },
 
   create: function(req, res) {
-    const { title, description, lat, lon, emergencyLevel, status } = req.body
-    const alert = new alertModel({ title, description, lat, lon, emergencyLevel, status });
+    const {
+      title,
+      description,
+      lat,
+      lon,
+      emergencyLevel,
+      status
+    } = req.body
+    
+    const alert = new alertModel({
+      title,
+      description,
+      lat,
+      lon,
+      emergencyLevel,
+      status
+    });
 
     alert.save(function(err, alert) {
       if (err) {
