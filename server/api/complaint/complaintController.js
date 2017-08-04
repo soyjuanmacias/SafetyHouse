@@ -35,8 +35,28 @@ module.exports = {
   },
 
   create: function(req, res) {
-    const { title, description, img_url, lat, lon, date, user, status, hour } = req.body
-    const complaint = new complaintModel({ title, description, img_url, lat, lon, date, user, status, hour });
+    const {
+      title,
+      description,
+      img_url,
+      lat,
+      lon,
+      date,
+      user,
+      status,
+      hour,
+    } = req.body
+    const complaint = new complaintModel({
+      title,
+      description,
+      img_url,
+      lat,
+      lon,
+      date,
+      user,
+      status,
+      hour,
+    });
 
     complaint.save(function(err, complaint) {
       if (err) {
@@ -51,6 +71,8 @@ module.exports = {
 
   update: function(req, res) {
     const id = req.params.id;
+    const { body } = req;
+
     complaintModel.findOne({
       _id: id
     }, function(err, complaint) {
@@ -66,15 +88,21 @@ module.exports = {
         });
       }
 
-      complaint.title = req.body.title ? req.body.title : complaint.title;
-      complaint.description = req.body.description ? req.body.description : complaint.description;
-      complaint.img_url = req.body.img_url ? req.body.img_url : complaint.img_url;
-      complaint.lat = req.body.lat ? req.body.lat : complaint.lat;
-      complaint.lon = req.body.lon ? req.body.lon : complaint.lon;
-      complaint.date = req.body.date ? req.body.date : complaint.date;
-      complaint.user = req.body.user ? req.body.user : complaint.user;
-      complaint.status = req.body.status ? req.body.status : complaint.status;
-      complaint.hour = req.body.hour ? req.body.hour : complaint.hour;
+      // Código por Marta / Evitar poner Complaints en 10 líneas
+      // for (const [key, value] of Object.entries(complaint)) {
+      //   console.log(key + ' ' + value);
+      //   complaint[key] = body[key] ? body[key] : complaint[key];
+      // }
+
+      complaint.title = body.title ? body.title : complaint.title;
+      complaint.description = body.description ? body.description : complaint.description;
+      complaint.img_url = body.img_url ? body.img_url : complaint.img_url;
+      complaint.lat = body.lat ? body.lat : complaint.lat;
+      complaint.lon = body.lon ? body.lon : complaint.lon;
+      complaint.date = body.date ? body.date : complaint.date;
+      complaint.user = body.user ? body.user : complaint.user;
+      complaint.status = body.status ? body.status : complaint.status;
+      complaint.hour = body.hour ? body.hour : complaint.hour;
 
       complaint.save(function(err, complaint) {
         if (err) {

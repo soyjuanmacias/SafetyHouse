@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComplaintComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }
+  
+
 
 }
