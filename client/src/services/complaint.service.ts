@@ -28,11 +28,16 @@ export class ComplaintService {
   listComplaint():Observable<Complaint>{
     return this.http.get(`${this.BASE_URL}`, this.options)
       .map(res => {
-        console.log('Entro en List Complaint del servicio')
-        console.log(res)
         this.complaintList = res.json();
-        console.log(this)
-        return res.json()
+      })
+      .catch(this.handleError)
+  }
+
+  createComplaint(newComplaint):Observable<Complaint>{
+    return this.http.post(`${this.BASE_URL}`, newComplaint, this.options)
+      .map(res => {
+        console.log('map después de la respuesta del post servicio complaint =>')
+        console.log(res.json())
       })
       .catch(this.handleError)
   }

@@ -1,12 +1,13 @@
 <a [routerLink]="['']"> Go back </a>
-<ul *ngFor="let complaint of complaintList">
-  <hr>
-  Complaint number: {{complaint._id}}
-  <li>Status: {{complaint.status}}</li>
-  <li>Title: {{complaint.title}}</li>
-  <li>Description: {{complaint.description}}</li>
-  <li>User ID who sent: {{complaint.user}}</li>
-  <li>Lat Map: {{complaint.lat}}</li>
-  <li>Lon Map: {{complaint.lon}}</li>
-  <hr>
-</ul>
+<div class="" *ngIf="complaintList">
+  <ul *ngFor="let complaint of complaintList">
+    <hr> Complaint number: {{complaint._id}}
+    <li>Status: {{complaint.status}}</li>
+    <li>Title: {{complaint.title}}</li>
+    <li>Description: {{complaint.description}}</li>
+    <li>User ID who sent: {{complaint.user}}</li>
+    <li>Lat Map: {{complaint.lat}}</li>
+    <li>Lon Map: {{complaint.lon}}</li>
+    <hr>
+  </ul>
+</div>
