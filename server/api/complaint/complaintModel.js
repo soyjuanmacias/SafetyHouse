@@ -12,7 +12,15 @@ const complaintSchema = new Schema({
 	 	type: Schema.Types.ObjectId,
 	 	ref: 'User'
 	},
-	'status' : Number,
+	'status' : {
+		type: String,
+		enum: [
+			'sent',
+			'received',
+			'completed'
+		],
+		default: 'sent'
+	},
 	'hour' : Date
 });
 
