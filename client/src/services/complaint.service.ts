@@ -14,6 +14,7 @@ export class ComplaintService {
   startLoginCompleted: boolean = false;
   BASE_URL: string=`${environment.BASE_URL}/complaint`;
   options: object = {withCredentials:true};
+  complaintList: Array<object> = [];
 
   constructor(private http:Http) { }
 
@@ -29,6 +30,8 @@ export class ComplaintService {
       .map(res => {
         console.log('Entro en List Complaint del servicio')
         console.log(res)
+        this.complaintList = res.json();
+        console.log(this)
         return res.json()
       })
       .catch(this.handleError)
