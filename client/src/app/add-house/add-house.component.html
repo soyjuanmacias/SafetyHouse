@@ -1,1 +1,26 @@
 <a [routerLink]="['../']"> Go back </a>
+<br>
+<hr>
+<div class="newHouse col s5">
+  <div>
+    <label>Calle:</label>
+    <input type="text" [(ngModel)]="newHouse.street">
+  </div>
+  <div>
+    <label>Número:</label>
+    <input type="number" [(ngModel)]="newHouse.number">
+  </div>
+  <div>
+    <label>Floors</label>
+    <input type="number" [(ngModel)]="newHouse.floors">
+  </div>
+  <div>
+    <label>Metros cuadrados</label>
+    <input type="number" [(ngModel)]="newHouse.m2">
+  </div>
+  <div>
+    <label>¿Tiene acceso trasero?</label>
+    <input type="checkbox" [checked]="newHouse.backAccess" (change)="newHouse.backAccess = !newHouse.backAccess" />
+  </div>
+  <button class="btn" (click)="addHouse()">Enviar</button>
+</div>

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'
 import { SessionService } from '../services/session.service'
 import { ComplaintService } from '../services/complaint.service'
 import { AlertService } from '../services/alert.service'
+import { HouseService } from '../services/house.service'
 import { AppComponent } from './app.component'
 import { HttpModule } from '@angular/http'
 import { LoginFormComponent } from './login-form/login-form.component'
@@ -43,7 +44,7 @@ import { HousesComponent } from './houses/houses.component'
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, ComplaintService, AlertService],
+  providers: [SessionService, ComplaintService, AlertService, HouseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
