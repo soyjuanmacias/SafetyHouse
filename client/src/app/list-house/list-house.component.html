@@ -1,0 +1,17 @@
+<a [routerLink]="['../']"> Go back </a>
+<ul *ngFor="let house of houseList">
+  <hr>
+  Calle: {{house.street}}
+  <li>Número: {{house.number}}</li>
+  <li>Floors: {{house.floors}}</li>
+  <li>Metros cuadrados: {{house.description}}</li>
+  <!-- <li>
+    Propietarios:
+    <ul>
+      <li ngFor="let member of house.members">Name: {{house.members.name}}</li>
+      <hr>
+    </ul>
+  </li> -->
+  <li>Acceso traseo?: {{house.backAccess}}</li>
+  <hr>
+</ul>
