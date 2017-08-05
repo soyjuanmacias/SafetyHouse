@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: 'complaint', component: ComplaintsComponent },
     { path: 'complaint/list', component: ListComplaintComponent },
     { path: 'complaint/add', component: AddComplaintComponent },
-    { path: 'complaint/:id', component: DetailComplaintComponent },
+    { path: 'complaint/:id/details', component: DetailComplaintComponent },
     { path: 'alert', component: AlertsComponent },
     { path: 'alert/list', component: ListAlertComponent },
     { path: 'alert/add', component: AddAlertComponent },

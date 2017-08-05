@@ -33,6 +33,16 @@ export class ComplaintService {
       .catch(this.handleError)
   }
 
+  showComplaint(idComplaint):Observable<Complaint>{
+    return this.http.get(`${this.BASE_URL}/${idComplaint}`, this.options)
+      .map(res => {
+        console.log('Entro en map de servicio complaint para mostrar complaint')
+        console.log(res.json())
+        this.complaint = res.json();
+      })
+      .catch(this.handleError)
+  }
+
   createComplaint(newComplaint):Observable<Complaint>{
     return this.http.post(`${this.BASE_URL}`, newComplaint, this.options)
       .map(res => {
