@@ -11,22 +11,19 @@ export class ListComplaintComponent implements OnInit {
 
   constructor(
     private complaint: ComplaintService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.complaint.listComplaint()
       .subscribe(
-        (complaint) => {
-          this.complaintList = this.complaint.complaintList;
-          console.log('Entro en this.complaint dentro del componente =>')
-          console.log(this.complaintList)
-        },
-        (err) => console.log(err)
+      (complaint) => {
+        this.complaintList = this.complaint.complaintList;
+        console.log('Entro en this.complaint dentro del componente =>')
+        console.log(this.complaintList)
+      },
+      (err) => console.log(err)
       )
     console.log('Entro en ngOnInit de List Complains')
     console.log(this.complaint)
   }
-
-
-
 }

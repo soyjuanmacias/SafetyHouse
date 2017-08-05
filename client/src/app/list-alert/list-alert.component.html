@@ -1,0 +1,16 @@
+<a [routerLink]="['../']"> Go back </a>
+<br>
+<hr>
+<div class="" *ngIf="alertList">
+  <ul *ngFor="let alert of alertList">
+    <hr><b>ALERT =>:</b> {{alert._id}}
+    <li><b>Status:</b> {{alert.status}}</li>
+    <li><b>Title:</b> {{alert.title}}</li>
+    <li><b>Description:</b> {{alert.description}}</li>
+    <li><b>User ID who sent:</b> {{alert.user}}</li>
+    <li><b>Lat Map:</b> {{alert.lat}}</li>
+    <li><b>Lon Map:</b> {{alert.lon}}</li>
+    <li><b>LEVEL OF EMERGENCY:</b> {{alert.emergencyLevel}}</li>
+    <hr>
+  </ul>
+</div>

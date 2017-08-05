@@ -3,40 +3,40 @@ import { environment } from '../environments/environment'
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
-export interface Complaint{
+export interface Alert{
   title: String,
   description: String
 }
 
 @Injectable()
-export class ComplaintService {
-  complaint: Complaint;
+export class AlertService {
+  alert: Alert;
   startLoginCompleted: boolean = false;
-  BASE_URL: string=`${environment.BASE_URL}/complaint`;
+  BASE_URL: string=`${environment.BASE_URL}/alert`;
   options: object = {withCredentials:true};
-  complaintList: Array<object> = [];
+  alertList: Array<object> = [];
 
   constructor(private http:Http) { }
 
   handleError(e) {
     console.log('ERROR => ' + e)
-    console.error("Error en la llamada al endpoint Complaint");
+    console.error("Error en la llamada al endpoint Alert");
     return Observable.throw(e.json().message);
   }
 
 
-  listComplaint():Observable<Complaint>{
+  listAlert():Observable<Alert>{
     return this.http.get(`${this.BASE_URL}`, this.options)
       .map(res => {
-        this.complaintList = res.json();
+        this.alertList = res.json();
       })
       .catch(this.handleError)
   }
 
-  createComplaint(newComplaint):Observable<Complaint>{
-    return this.http.post(`${this.BASE_URL}`, newComplaint, this.options)
+  createAlert(newAlert):Observable<Alert>{
+    return this.http.post(`${this.BASE_URL}`, newAlert, this.options)
       .map(res => {
-        console.log('map después de la respuesta del post servicio complaint =>')
+        console.log('map después de la respuesta del post servicio alert =>')
         console.log(res.json())
       })
       .catch(this.handleError)

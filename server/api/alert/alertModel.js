@@ -6,8 +6,28 @@ const alertSchema = new Schema({
 	'description' : String,
 	'lat' : Number,
 	'lon' : Number,
-	'emergencyLevel' : Number,
-	'status' : Number
+	'user' : {
+	 	type: Schema.Types.ObjectId,
+	 	ref: 'User'
+	},
+	'emergencyLevel' : {
+		type: String,
+		enum: [
+			'Max',
+			'Medium',
+			'Low'
+		],
+		default: 'sent'
+	},
+	'status' : {
+		type: String,
+		enum: [
+			'sent',
+			'received',
+			'completed'
+		],
+		default: 'sent'
+	},
 });
 
 module.exports = mongoose.model('alert', alertSchema);
