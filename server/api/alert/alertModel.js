@@ -13,9 +13,10 @@ const alertSchema = new Schema({
 	'emergencyLevel' : {
 		type: String,
 		enum: [
-			'Max',
-			'Medium',
-			'Low'
+			'Muy urgente',
+			'Urgente',
+			'Media',
+			'Baja'
 		],
 		default: 'sent'
 	},

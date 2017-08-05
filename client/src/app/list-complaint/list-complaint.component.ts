@@ -11,7 +11,16 @@ export class ListComplaintComponent implements OnInit {
 
   constructor(
     private complaint: ComplaintService,
-  ) { }
+  ) {
+    setInterval(() => {
+      this.complaint.listComplaint()
+        .subscribe(
+          (complaint) => {
+            this.complaintList = this.complaint.complaintList
+          }
+        )
+    }, 10 * 1000)
+  }
 
   ngOnInit() {
     this.complaint.listComplaint()
@@ -26,4 +35,5 @@ export class ListComplaintComponent implements OnInit {
     console.log('Entro en ngOnInit de List Complains')
     console.log(this.complaint)
   }
+
 }

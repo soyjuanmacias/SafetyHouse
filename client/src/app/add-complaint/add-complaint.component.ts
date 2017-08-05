@@ -13,7 +13,7 @@ export class AddComplaintComponent implements OnInit {
     user: this.session.user._id,
     status: 'sent',
     date: new Date(),
-    hour: new Date()
+    hour: new Date(),
   }
   constructor(
     private session: SessionService,
@@ -33,6 +33,7 @@ export class AddComplaintComponent implements OnInit {
         },
         (err) => console.log(err)
       )
+    this.newComplaint = {}
   }
 
 }

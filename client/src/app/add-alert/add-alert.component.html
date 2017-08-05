@@ -1,3 +1,28 @@
 <a [routerLink]="['../']"> Go back </a>
 <br>
 <hr>
+<div class="newAlert col s5">
+  <div>
+    <label>¿Que está pasando?</label>
+    <input type="text" [(ngModel)]="newAlert.title">
+  </div>
+  <div>
+    <label for="complaint-description">Describe los hechos:</label>
+    <input type="text" [(ngModel)]="newAlert.description">
+  </div>
+  <div>
+    <label>Img Url:</label>
+    <input class="add-complaint-form" type="text" [(ngModel)]="newAlert.img_url">
+  </div>
+  <div class="">
+    <label>Prioridad</label>
+    <select name="emergencyLevel" [(ngModel)]="newAlert.emergencyLevel">
+      <optgroup label="Prioridad">
+      <option value="Baja">Baja</option>
+      <option value="Media">Media</option>
+      <option value="Urgente">Urgente</option>
+      <option value="Muy urgente">Muy urgente</option>
+    </select>
+  </div>
+  <button class="btn" (click)="addAlert()">Enviar</button>
+</div>

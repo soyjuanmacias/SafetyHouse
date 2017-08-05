@@ -7,6 +7,7 @@ import { ListComplaintComponent } from './list-complaint/list-complaint.componen
 import { AlertsComponent } from './alerts/alerts.component'
 import { AddAlertComponent } from './add-alert/add-alert.component'
 import { ListAlertComponent } from './list-alert/list-alert.component'
+import { SignupComponent } from './signup/signup.component'
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'alert', component: AlertsComponent },
     { path: 'alert/list', component: ListAlertComponent },
     { path: 'alert/add', component: AddAlertComponent },
+    { path: 'signup', component: SignupComponent },
     { path: '**', redirectTo: '' }
 ];

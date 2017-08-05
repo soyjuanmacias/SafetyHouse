@@ -38,6 +38,8 @@ export class ComplaintService {
       .map(res => {
         console.log('map después de la respuesta del post servicio complaint =>')
         console.log(res.json())
+        console.log('Y ahora refresco otra vez la lista de complaint =>')
+        this.listComplaint()
       })
       .catch(this.handleError)
   }

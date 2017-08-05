@@ -15,7 +15,8 @@ import { routes } from './routes';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AddAlertComponent } from './add-alert/add-alert.component';
-import { ListAlertComponent } from './list-alert/list-alert.component'
+import { ListAlertComponent } from './list-alert/list-alert.component';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListAlertComponent } from './list-alert/list-alert.component'
     ComplaintsComponent,
     AlertsComponent,
     AddAlertComponent,
-    ListAlertComponent
+    ListAlertComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
