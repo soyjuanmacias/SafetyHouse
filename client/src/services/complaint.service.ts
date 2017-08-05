@@ -25,7 +25,7 @@ export class ComplaintService {
   }
 
 
-  listComplaint():Observable<Complaint>{
+  listComplaint():Observable<Complaint> {
     return this.http.get(`${this.BASE_URL}`, this.options)
       .map(res => {
         this.complaintList = res.json();
@@ -33,7 +33,7 @@ export class ComplaintService {
       .catch(this.handleError)
   }
 
-  showComplaint(idComplaint):Observable<Complaint>{
+  showComplaint(idComplaint):Observable<Complaint> {
     return this.http.get(`${this.BASE_URL}/${idComplaint}`, this.options)
       .map(res => {
         console.log('Entro en map de servicio complaint para mostrar complaint')
@@ -43,7 +43,7 @@ export class ComplaintService {
       .catch(this.handleError)
   }
 
-  createComplaint(newComplaint):Observable<Complaint>{
+  createComplaint(newComplaint):Observable<Complaint> {
     return this.http.post(`${this.BASE_URL}`, newComplaint, this.options)
       .map(res => {
         console.log('map después de la respuesta del post servicio complaint =>')
@@ -52,6 +52,16 @@ export class ComplaintService {
         this.listComplaint()
       })
       .catch(this.handleError)
+  }
+
+  update(id, updates):Observable<Complaint> {
+    return this.http.put(`${this.BASE_URL}/${id}`, updates, this.options)
+    .map(res => {
+      console.log('map después de la respuesta update complaint =>')
+      console.log(res.json())
+      res.json()
+    })
+    .catch(this.handleError)
   }
 
 }

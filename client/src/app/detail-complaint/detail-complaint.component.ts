@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router'
 export class DetailComplaintComponent implements OnInit {
   idComplaint: String
   oneComplaint: Object
+  updateComplaint: Object
 
   constructor(
     private complaint: ComplaintService,
@@ -29,6 +30,19 @@ export class DetailComplaintComponent implements OnInit {
           )
       }
     })
+  }
+
+  closeComplaint() {
+    this.updateComplaint = {
+      status: 'completed'
+    }
+    this.complaint.update(this.idComplaint, this.updateComplaint)
+      .subscribe(
+        (updatedComplaint) => {
+          console.log('Denuncia actualizada')
+        },
+      (err) => console.log(err)
+      )
   }
 
 }
