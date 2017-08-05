@@ -20,7 +20,8 @@ import { ListAlertComponent } from './list-alert/list-alert.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddHouseComponent } from './add-house/add-house.component';
 import { ListHouseComponent } from './list-house/list-house.component';
-import { HousesComponent } from './houses/houses.component'
+import { HousesComponent } from './houses/houses.component';
+import { DetailComplaintComponent } from './detail-complaint/detail-complaint.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HousesComponent } from './houses/houses.component'
     SignupComponent,
     AddHouseComponent,
     ListHouseComponent,
-    HousesComponent
+    HousesComponent,
+    DetailComplaintComponent
   ],
   imports: [
     BrowserModule,

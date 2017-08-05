@@ -11,12 +11,14 @@ import { SignupComponent } from './signup/signup.component'
 import { HousesComponent } from './houses/houses.component'
 import { AddHouseComponent } from './add-house/add-house.component'
 import { ListHouseComponent } from './list-house/list-house.component'
+import { DetailComplaintComponent } from './detail-complaint/detail-complaint.component'
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent },
     { path: 'complaint', component: ComplaintsComponent },
     { path: 'complaint/list', component: ListComplaintComponent },
     { path: 'complaint/add', component: AddComplaintComponent },
+    { path: 'complaint/:id', component: DetailComplaintComponent },
     { path: 'alert', component: AlertsComponent },
     { path: 'alert/list', component: ListAlertComponent },
     { path: 'alert/add', component: AddAlertComponent },
