@@ -29,9 +29,7 @@ export class ComplaintService {
   listComplaint():Observable<Complaint> {
     return this.http.get(`${this.BASE_URL}`, this.options)
       .map(res => {
-        console.log('Entro antes del emitter =>')
         this.complaintEmitter.emit(res.json())
-        console.log(res.json)
         this.complaintList = res.json();
       })
       .catch(this.handleError)

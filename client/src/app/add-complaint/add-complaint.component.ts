@@ -23,13 +23,9 @@ export class AddComplaintComponent implements OnInit {
   ngOnInit() {}
 
   addComplaint() {
-    console.log('Funcion addComplaint dentro del componente =>')
-    console.log(this.newComplaint)
     this.complaint.createComplaint(this.newComplaint)
       .subscribe(
         (complaint) => {
-          console.log('Denuncia creada => Entro en this.complaint componente createComplaint =>')
-          console.log(this.complaint)
         },
         (err) => console.log(err)
       )

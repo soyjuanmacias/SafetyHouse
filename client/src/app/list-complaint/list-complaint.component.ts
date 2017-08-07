@@ -8,24 +8,23 @@ import { ComplaintService } from '../../services/complaint.service';
 })
 export class ListComplaintComponent implements OnInit, OnDestroy {
   complaintList: Array<object> = []
+  subscription: any
   private time
+
   constructor(
     private complaint: ComplaintService,
-  ) {
-    // this.time = setInterval(() => {
-    //   this.complaint.listComplaint()
-    //     .subscribe(
-    //       (complaint) => {
-    //         this.complaintList = this.complaint.complaintList
-    //       }
-    //     )
-    // }, 10 * 1000)
+  )
+  {
+    this.complaint.listComplaint()
+      .subscribe(
+        (complaint) => {
+          this.complaintList = this.complaint.complaintList
+        }
+      )
   }
 
-
-
   ngOnDestroy() {
-    clearInterval(this.time)
+    this.subscription.unsubscribe()
   }
 
   ngOnInit() {
@@ -39,11 +38,12 @@ export class ListComplaintComponent implements OnInit, OnDestroy {
       (err) => console.log(err)
       )
 
-    this.complaint.getCreateComplaintEmitter()
-      .subscribe(list => {
-        console.log('Imprimo el argumento list en componente list-complaint =>')
-        console.log(list)
-      })
+    this.subscription = this.complaint.getCreateComplaintEmitter()
+      .subscribe(list => this.updateList(list))
+  }
+
+  updateList(list) {
+    this.complaintList = list
   }
 
 }

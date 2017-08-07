@@ -35,8 +35,6 @@ module.exports = {
   },
 
   create: function(req, res) {
-    console.log('Imprimo req en create complaint');
-    console.log(res);
     const {
       title,
       description,
