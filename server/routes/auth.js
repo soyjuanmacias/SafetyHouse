@@ -11,12 +11,17 @@ authRoutes.get("/signup", AuthController.signup)
 authRoutes.post('/signup', (req, res, next) => {
   const {
     username,
-    password
+    password,
+    lastName,
+    email,
+    telephone,
+    name,
+    role,
   } = req.body;
 
   if (!username || !password) {
     res.status(400).json({
-      message: 'Provide username and password'
+      message: 'Provide email and password'
     });
     return;
   }
@@ -26,7 +31,7 @@ authRoutes.post('/signup', (req, res, next) => {
   }, '_id').exec().then(foundUser => {
     if (foundUser) {
       res.status(400).json({
-        message: 'The username already exists'
+        message: 'The email already exists'
       });
       return;
     }
@@ -36,7 +41,12 @@ authRoutes.post('/signup', (req, res, next) => {
 
     const theUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      lastName,
+      email,
+      telephone,
+      name,
+      role,
     }).save().then(user => {
       req.login(user, (err) => {
         if (err) {
