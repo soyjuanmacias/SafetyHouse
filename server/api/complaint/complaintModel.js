@@ -16,12 +16,13 @@ const complaintSchema = new Schema({
 		type: String,
 		enum: [
 			'sent',
-			'received',
+			'inProcess',
 			'completed'
 		],
 		default: 'sent'
 	},
-	'hour' : Date
+	'hour' : Date,
+	'comment': String
 });
 
 module.exports = mongoose.model('complaint', complaintSchema);

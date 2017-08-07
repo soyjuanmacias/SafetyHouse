@@ -1,21 +1,33 @@
 <a [routerLink]="['/complaint/list']"> Go back </a>
 <br>
 <hr>
-<h2>Título</h2>
-<h2>{{oneComplaint.title}}</h2>
-<hr>
-<h2>Descripción de los hechos</h2>
-<h4>{{oneComplaint.description}}</h4>
-<hr>
-<h2>Fecha</h2>
-<h4>{{oneComplaint.date}}</h4>
-<hr>
-<h2>Estado</h2>
-<h4>{{oneComplaint.status}}</h4>
-<h2>Imagen</h2>
-<img [src]="oneComplaint.img_url" height="200">
-<h2>Usuario que denuncia</h2>
-<h4>{{oneComplaint.user}}</h4>
-<h3>Marcar como recibida</h3>
-<button *ngIf="oneComplaint.status === 'sent'" class="btn" (click)="closeComplaint()">Cerrar denuncia</button>
-<button *ngIf="oneComplaint.status === 'completed'" class="btn" (click)="closeComplaint()">Abrir denuncia</button>
+<div *ngIf="oneComplaint">
+  <h2>Título</h2>
+  <h2>{{oneComplaint.title}}</h2>
+  <hr>
+  <h2>Descripción de los hechos</h2>
+  <h4>{{oneComplaint.description}}</h4>
+  <hr>
+  <h2>Fecha</h2>
+  <h4>{{oneComplaint.date}}</h4>
+  <hr>
+  <h2>Estado</h2>
+  <h4>{{oneComplaint.status}}</h4>
+  <h2>Imagen</h2>
+  <img [src]="oneComplaint.img_url" height="200">
+  <h2>Usuario que denuncia</h2>
+  <h4>{{oneComplaint.user}}</h4>
+  <div *ngIf="oneComplaint.comment !== ''">
+    <h2>Actuación por parte de Seguridad</h2>
+    <h4>{{oneComplaint.comment}}</h4>
+  </div>
+  <button *ngIf="oneComplaint.status === 'sent'" class="btn" (click)="conmuteComplainState()">Iniciar trámite</button>
+  <div *ngIf="oneComplaint.status === 'inProcess'">
+    <textarea [(ngModel)]="comment" rows="4" cols="50" placeholder="Si escribes algo nuevo, sustituirás el antiguo comentario de actuación." value=""></textarea>
+    <br>
+    <button *ngIf="oneComplaint.status === 'inProcess'" class="btn" (click)="closeComplaint()">Cerrar denuncia</button>
+  </div>
+  <div *ngIf="oneComplaint.status === 'completed'">
+    <button class="btn" (click)="openComplaint()">Re-abrir denuncia</button>
+  </div>
+</div>

@@ -1,11 +1,16 @@
-<h1>DASHBOARD</h1>
-<br>
-<a [routerLink]="['/complaint']">COMPLAINTS</a>
-<br><br>
-<a [routerLink]="['/alert']">ALERTS</a>
-<br><br>
-<a [routerLink]="['/house']">HOUSES</a>
-<br><br>
-<a [routerLink]="['/signup']" *ngIf="session.user.role == 'Admin'">REGISTER NEW USER</a>
-<br><br>
-<a [routerLink]="['']"> Go back </a>
+<div *ngIf="session.user.role !== 'User'">
+  <h1>DASHBOARD</h1>
+  <br>
+  <a [routerLink]="['/complaint']">COMPLAINTS</a>
+  <br><br>
+  <a [routerLink]="['/alert']">ALERTS</a>
+  <br><br>
+  <a [routerLink]="['/house']">HOUSES</a>
+  <br><br>
+  <a [routerLink]="['/signup']" *ngIf="session.user.role == 'Admin'">REGISTER NEW USER</a>
+  <br><br>
+</div>
+
+<div *ngIf="session.user.role == 'User'">
+  <p>Hola Usuario</p>
+</div>

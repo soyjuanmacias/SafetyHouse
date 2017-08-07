@@ -26,15 +26,7 @@
       <option value="Admin">Administrador</option>
     </select>
 </div>
-<div class="">
-  <label>Dirección</label>
-  <select name="role" [(ngModel)]="newUser.role">
-      <optgroup label="Permisos">
-      <option value="User">Usuario</option>
-      <option value="Security">Vigilante</option>
-      <option value="Admin">Administrador</option>
-    </select>
-</div>
+<br>
 <button (click)="signup()"> Registrar usuario </button>
 <br>
 <p class="error"> {{ error }} </p>

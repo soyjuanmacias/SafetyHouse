@@ -11,6 +11,7 @@ export class DetailComplaintComponent implements OnInit, OnDestroy{
   idComplaint: String
   oneComplaint: Complaint
   updateComplaint: Complaint
+  comment: String
 
   private time
 
@@ -45,28 +46,59 @@ ngOnDestroy() {
 }
 
   changeStatus() {
-    if (this.oneComplaint.status == 'completed') {
+    if (this.oneComplaint.status == 'inProcess') {
       return this.updateComplaint = {
-        status: 'sent'
+        status: 'sent',
+        comment: this.comment
       }
     }
     if (this.oneComplaint.status == 'sent') {
       return this.updateComplaint = {
-        status: 'completed'
+        status: 'inProcess',
+        comment: this.comment
       }
     }
   }
 
-    closeComplaint() {
-    this.ngOnInit()
+  openComplaint() {
+    this.updateComplaint = {
+      status: 'inProcess',
+      comment: this.comment
+    }
+    this.complaint.update(this.idComplaint, this.updateComplaint)
+    .subscribe(
+      (updatedComplaint) => {
+        console.log('Denuncia actualizada, changed to: ' + this.updateComplaint.status)
+        console.log(updatedComplaint)
+      },
+      (err) => console.log(err)
+    )
+  }
+
+  conmuteComplainState() {
     this.changeStatus()
     this.complaint.update(this.idComplaint, this.updateComplaint)
     .subscribe(
-    (updatedComplaint) => {
-      console.log('Denuncia actualizada, changed to: ' + this.updateComplaint.status)
-      console.log(updatedComplaint)
-    },
-    (err) => console.log(err)
+      (updatedComplaint) => {
+        console.log('Denuncia actualizada, changed to: ' + this.updateComplaint.status)
+        console.log(updatedComplaint)
+      },
+      (err) => console.log(err)
     )
+  }
+
+  closeComplaint() {
+    this.updateComplaint = {
+      status: 'completed',
+      comment: this.comment
+    }
+    this.complaint.update(this.idComplaint, this.updateComplaint)
+      .subscribe(
+        (updatedComplaint) => {
+          console.log('Denuncia actualizada, changed to: ' + this.updateComplaint.status)
+          console.log(updatedComplaint)
+        },
+        (err) => console.log(err)
+      )
   }
 }

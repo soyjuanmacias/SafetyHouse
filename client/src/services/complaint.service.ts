@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Rx';
 
 export interface Complaint{
   status: String,
+  comment: String
 }
 
 @Injectable()

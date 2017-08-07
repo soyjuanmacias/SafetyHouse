@@ -111,6 +111,7 @@ module.exports = {
       complaint.user = body.user ? body.user : complaint.user;
       complaint.status = body.status ? body.status : complaint.status;
       complaint.hour = body.hour ? body.hour : complaint.hour;
+      complaint.comment = body.comment ? body.comment : complaint.comment;
 
       // console.log('Imprimo props => ');
       // console.log(props);
