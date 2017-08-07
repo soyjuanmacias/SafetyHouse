@@ -13,4 +13,10 @@
 
 <div *ngIf="session.user.role == 'User'">
   <p>Hola Usuario</p>
+  <a [routerLink]="['/complaint/add']">DENUNCIAR</a>
+  <br><br>
+  <a [routerLink]="['/alert/add']">ALERTAR</a>
+  <br><br>
+  <a [routerLink]="['/house']">COMUNIDAD</a>
+  <br><br>
 </div>
