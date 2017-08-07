@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ComplaintService } from '../../services/complaint.service';
 
 @Component({
@@ -6,20 +6,26 @@ import { ComplaintService } from '../../services/complaint.service';
   templateUrl: './list-complaint.component.html',
   styleUrls: ['./list-complaint.component.css']
 })
-export class ListComplaintComponent implements OnInit {
+export class ListComplaintComponent implements OnInit, OnDestroy {
   complaintList: Array<object> = []
-
+  private time
   constructor(
     private complaint: ComplaintService,
   ) {
-    setInterval(() => {
-      this.complaint.listComplaint()
-        .subscribe(
-          (complaint) => {
-            this.complaintList = this.complaint.complaintList
-          }
-        )
-    }, 10 * 1000)
+    // this.time = setInterval(() => {
+    //   this.complaint.listComplaint()
+    //     .subscribe(
+    //       (complaint) => {
+    //         this.complaintList = this.complaint.complaintList
+    //       }
+    //     )
+    // }, 10 * 1000)
+  }
+
+
+
+  ngOnDestroy() {
+    clearInterval(this.time)
   }
 
   ngOnInit() {
@@ -32,8 +38,12 @@ export class ListComplaintComponent implements OnInit {
       },
       (err) => console.log(err)
       )
-    console.log('Entro en ngOnInit de List Complains')
-    console.log(this.complaint)
+
+    this.complaint.getCreateComplaintEmitter()
+      .subscribe(list => {
+        console.log('Imprimo el argumento list en componente list-complaint =>')
+        console.log(list)
+      })
   }
 
 }

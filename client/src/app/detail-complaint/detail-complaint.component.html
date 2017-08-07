@@ -2,19 +2,20 @@
 <br>
 <hr>
 <h2>Título</h2>
-<h2>oneComplaint.title</h2>
+<h2>{{oneComplaint.title}}</h2>
 <hr>
 <h2>Descripción de los hechos</h2>
-<h4>oneComplaint.description</h4>
+<h4>{{oneComplaint.description}}</h4>
 <hr>
 <h2>Fecha</h2>
-<h4>oneComplaint.date</h4>
+<h4>{{oneComplaint.date}}</h4>
 <hr>
 <h2>Estado</h2>
-<h4>oneComplaint.status</h4>
+<h4>{{oneComplaint.status}}</h4>
 <h2>Imagen</h2>
 <img [src]="oneComplaint.img_url" height="200">
 <h2>Usuario que denuncia</h2>
-<h4>oneComplaint.user</h4>
+<h4>{{oneComplaint.user}}</h4>
 <h3>Marcar como recibida</h3>
-<button class="btn" (click)="complaintCompleted()">Cerrar denuncia</button>
+<button *ngIf="oneComplaint.status === 'sent'" class="btn" (click)="closeComplaint()">Cerrar denuncia</button>
+<button *ngIf="oneComplaint.status === 'completed'" class="btn" (click)="closeComplaint()">Abrir denuncia</button>

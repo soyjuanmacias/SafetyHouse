@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HouseService } from '../../services/house.service'
 
 @Component({
@@ -6,11 +6,11 @@ import { HouseService } from '../../services/house.service'
   templateUrl: './list-house.component.html',
   styleUrls: ['./list-house.component.css']
 })
-export class ListHouseComponent implements OnInit {
+export class ListHouseComponent implements OnInit, OnDestroy {
   houseList: Array<Object> = []
-
+  private time
   constructor(private house: HouseService) {
-    setInterval(() => {
+    this.time = setInterval(() => {
       this.house.listHouse()
         .subscribe(
           (complaint) => {
@@ -18,6 +18,10 @@ export class ListHouseComponent implements OnInit {
           }
         )
     }, 10 * 1000)
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.time)
   }
 
   ngOnInit() {

@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { environment } from '../environments/environment'
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 export interface Complaint{
-  title: String,
-  description: String
+  status: String,
 }
 
 @Injectable()
@@ -15,6 +14,8 @@ export class ComplaintService {
   BASE_URL: string=`${environment.BASE_URL}/complaint`;
   options: object = {withCredentials:true};
   complaintList: Array<object> = [];
+
+  complaintEmitter: EventEmitter<any> = new EventEmitter()
 
   constructor(private http:Http) { }
 
@@ -28,6 +29,9 @@ export class ComplaintService {
   listComplaint():Observable<Complaint> {
     return this.http.get(`${this.BASE_URL}`, this.options)
       .map(res => {
+        console.log('Entro antes del emitter =>')
+        this.complaintEmitter.emit(res.json())
+        console.log(res.json)
         this.complaintList = res.json();
       })
       .catch(this.handleError)
@@ -36,8 +40,6 @@ export class ComplaintService {
   showComplaint(idComplaint):Observable<Complaint> {
     return this.http.get(`${this.BASE_URL}/${idComplaint}`, this.options)
       .map(res => {
-        console.log('Entro en map de servicio complaint para mostrar complaint')
-        console.log(res.json())
         this.complaint = res.json();
       })
       .catch(this.handleError)
@@ -46,20 +48,20 @@ export class ComplaintService {
   createComplaint(newComplaint):Observable<Complaint> {
     return this.http.post(`${this.BASE_URL}`, newComplaint, this.options)
       .map(res => {
-        console.log('map después de la respuesta del post servicio complaint =>')
-        console.log(res.json())
-        console.log('Y ahora refresco otra vez la lista de complaint =>')
         this.listComplaint()
+        return res.json()
       })
       .catch(this.handleError)
+  }
+
+  getCreateComplaintEmitter() {
+    return this.complaintEmitter
   }
 
   update(id, updates):Observable<Complaint> {
     return this.http.put(`${this.BASE_URL}/${id}`, updates, this.options)
     .map(res => {
-      console.log('map después de la respuesta update complaint =>')
-      console.log(res.json())
-      res.json()
+      return res.json()
     })
     .catch(this.handleError)
   }

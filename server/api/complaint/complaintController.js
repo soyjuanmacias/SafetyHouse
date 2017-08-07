@@ -72,6 +72,9 @@ module.exports = {
   },
 
   update: function(req, res) {
+    console.log('Imprimo en Update Complaint =>');
+    console.log(req.body);
+    console.log(req.params);
     const id = req.params.id;
     const { body } = req;
 
@@ -96,6 +99,11 @@ module.exports = {
       //   complaint[key] = body[key] ? body[key] : complaint[key];
       // }
 
+      // Código por Kiko Beats®
+      // const props = Object.assign({}, complaint.toJSON(), body)
+      //
+      // complaintModel.save({_id: props.id, })
+
       complaint.title = body.title ? body.title : complaint.title;
       complaint.description = body.description ? body.description : complaint.description;
       complaint.img_url = body.img_url ? body.img_url : complaint.img_url;
@@ -106,6 +114,8 @@ module.exports = {
       complaint.status = body.status ? body.status : complaint.status;
       complaint.hour = body.hour ? body.hour : complaint.hour;
 
+      // console.log('Imprimo props => ');
+      // console.log(props);
       complaint.save(function(err, complaint) {
         if (err) {
           return res.status(500).json({
