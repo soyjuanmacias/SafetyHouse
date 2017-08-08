@@ -5,7 +5,7 @@
   <input type="text" [(ngModel)]="pattern" />
   <br>
 </div>
-<ul *ngFor="let user of userList | filter : 'street' && 'name' && 'number' && 'lastName' && 'telephone' && 'email' : pattern; let i = index">
+<ul *ngFor="let user of userList | filter : 'street' : pattern">
   <hr>
   <li>Nombre: {{user.name}}</li>
   <li>Apellidos: {{user.lastName}}</li>
