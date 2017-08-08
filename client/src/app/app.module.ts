@@ -21,7 +21,10 @@ import { SignupComponent } from './signup/signup.component';
 import { AddHouseComponent } from './add-house/add-house.component';
 import { ListHouseComponent } from './list-house/list-house.component';
 import { HousesComponent } from './houses/houses.component';
-import { DetailComplaintComponent } from './detail-complaint/detail-complaint.component'
+import { DetailComplaintComponent } from './detail-complaint/detail-complaint.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContactSecurityComponent } from './contact-security/contact-security.component';
+import { ContactUsersComponent } from './contact-users/contact-users.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { DetailComplaintComponent } from './detail-complaint/detail-complaint.co
     AddHouseComponent,
     ListHouseComponent,
     HousesComponent,
-    DetailComplaintComponent
+    DetailComplaintComponent,
+    ContactComponent,
+    ContactSecurityComponent,
+    ContactUsersComponent
   ],
   imports: [
     BrowserModule,
