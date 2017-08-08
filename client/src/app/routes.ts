@@ -12,6 +12,9 @@ import { HousesComponent } from './houses/houses.component'
 import { AddHouseComponent } from './add-house/add-house.component'
 import { ListHouseComponent } from './list-house/list-house.component'
 import { DetailComplaintComponent } from './detail-complaint/detail-complaint.component'
+import { ContactComponent } from './contact/contact.component'
+import { ContactUsersComponent } from './contact-users/contact-users.component'
+import { ContactSecurityComponent } from './contact-security/contact-security.component'
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -26,5 +29,8 @@ export const routes: Routes = [
     { path: 'house/list', component: ListHouseComponent },
     { path: 'house/add', component: AddHouseComponent },
     { path: 'signup', component: SignupComponent },
+    { path: 'contact', component: ContactComponent },
+    { path: 'contact/users', component: ContactUsersComponent },
+    { path: 'contact/security', component: ContactSecurityComponent },
     { path: '**', redirectTo: '' }
 ];
