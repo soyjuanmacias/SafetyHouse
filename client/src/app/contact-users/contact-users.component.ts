@@ -7,40 +7,30 @@ import { ContactService } from '../../services/contact.service'
   styleUrls: ['./contact-users.component.css']
 })
 export class ContactUsersComponent implements OnInit {
+  userList: Array<object> = []
 
   constructor(
-    private contac: ContactService,
+    private contact: ContactService,
   )
   {
-    this.complaint.listComplaint()
+    this.contact.listUser()
       .subscribe(
-        (complaint) => {
-          this.complaintList = this.complaint.complaintList
+        (user) => {
+          this.userList = this.contact.userList
         }
       )
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
-  }
-
   ngOnInit() {
-    this.complaint.listComplaint()
+    this.contact.listUser()
       .subscribe(
-      (complaint) => {
-        this.complaintList = this.complaint.complaintList;
-        console.log('Entro en this.complaint dentro del componente =>')
-        console.log(this.complaintList)
-      },
-      (err) => console.log(err)
+        (user) => {
+          this.userList = this.contact.userList;
+          console.log('Entro en this.contact dentro del componente user-contact =>')
+          console.log(this.userList)
+        },
+        (err) => console.log(err)
       )
-
-    this.subscription = this.complaint.getCreateComplaintEmitter()
-      .subscribe(list => this.updateList(list))
-  }
-
-  updateList(list) {
-    this.complaintList = list
   }
 
 }

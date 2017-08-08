@@ -5,6 +5,7 @@ import { SessionService } from '../services/session.service'
 import { ComplaintService } from '../services/complaint.service'
 import { AlertService } from '../services/alert.service'
 import { HouseService } from '../services/house.service'
+import { ContactService } from '../services/contact.service'
 import { AppComponent } from './app.component'
 import { HttpModule } from '@angular/http'
 import { LoginFormComponent } from './login-form/login-form.component'
@@ -52,7 +53,7 @@ import { ContactUsersComponent } from './contact-users/contact-users.component'
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, ComplaintService, AlertService, HouseService],
+  providers: [SessionService, ComplaintService, AlertService, HouseService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

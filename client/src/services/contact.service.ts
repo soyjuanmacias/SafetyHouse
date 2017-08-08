@@ -22,13 +22,13 @@ export class ContactService {
 
   handleError(e) {
     console.log('ERROR => ' + e)
-    console.error("Error en la llamada al endpoint Complaint");
+    console.error("Error en la llamada al endpoint Contact");
     return Observable.throw(e.json().message);
   }
 
 
   listSecurity():Observable<User> {
-    return this.http.get(`${this.BASE_URL}`, this.options)
+    return this.http.get(`${this.BASE_URL}/security`, this.options)
       .map(res => {
         this.securityList = res.json();
       })
@@ -36,7 +36,7 @@ export class ContactService {
   }
 
   listUser():Observable<User> {
-    return this.http.get(`${this.BASE_URL}`, this.options)
+    return this.http.get(`${this.BASE_URL}/users`, this.options)
       .map(res => {
         this.userList = res.json();
       })
