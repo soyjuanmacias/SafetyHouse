@@ -27,6 +27,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactSecurityComponent } from './contact-security/contact-security.component';
 import { ContactUsersComponent } from './contact-users/contact-users.component'
 import { FilterPipe } from './pipes/filter.pipe'
+import { JasperoAlertsModule } from '@jaspero/ng2-alerts'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { FilterPipe } from './pipes/filter.pipe'
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    JasperoAlertsModule
   ],
   providers: [SessionService, ComplaintService, AlertService, HouseService, ContactService],
   bootstrap: [AppComponent]

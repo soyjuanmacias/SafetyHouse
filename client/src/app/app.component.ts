@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SessionService } from '../services/session.service';
+import { AlertsService } from '@jaspero/ng2-alerts'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

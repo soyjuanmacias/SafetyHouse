@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 import { ComplaintService } from '../../services/complaint.service'
+import { AlertsService } from '@jaspero/ng2-alerts'
 
 @Component({
   selector: 'app-add-complaint',
@@ -17,7 +18,8 @@ export class AddComplaintComponent implements OnInit {
   }
   constructor(
     private session: SessionService,
-    private complaint: ComplaintService
+    private complaint: ComplaintService,
+    private _alert: AlertsService
   ) { }
 
   ngOnInit() {}
@@ -26,6 +28,7 @@ export class AddComplaintComponent implements OnInit {
     this.complaint.createComplaint(this.newComplaint)
       .subscribe(
         (complaint) => {
+          this._alert.create('success', 'Denuncia recibida correctamente');
         },
         (err) => console.log(err)
       )
