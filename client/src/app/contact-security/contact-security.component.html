@@ -1,6 +1,11 @@
 <a [routerLink]="['../']"> Go back </a>
-<br>
-<hr>
-<p>
-  contact-security works!
-</p>
+<ul *ngFor="let security of securityList">
+  <hr>
+  <li>Nombre: {{security.name}}</li>
+  <li>Apellidos: {{security.lastName}}</li>
+  <li>Email: {{security.email}}</li>
+  <li>Contato: {{security.telephone}}</li>
+  <li>Puesto: {{security.role}}</li>
+  <button [routerLink]="['../', security._id, 'details']"> Ver vigilante </button>
+  <hr>
+</ul>

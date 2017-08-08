@@ -1,13 +1,11 @@
 <a [routerLink]="['../']"> Go back </a>
-<br>
-<hr>
-<a [routerLink]="['../']"> Go back </a>
 <ul *ngFor="let user of userList">
   <hr>
   <li>Nombre: {{user.name}}</li>
   <li>Apellidos: {{user.lastName}}</li>
   <li>Email: {{user.email}}</li>
   <li>Contato: {{user.telephone}}</li>
+  <li>Vecino: {{user.role}}</li>
   <button [routerLink]="['../', user._id, 'details']"> Ver usuario </button>
   <hr>
 </ul>
