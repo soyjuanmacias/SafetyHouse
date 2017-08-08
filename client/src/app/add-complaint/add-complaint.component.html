@@ -1,4 +1,5 @@
-<a [routerLink]="['../']"> Go back </a>
+<a [routerLink]="['../']" *ngIf="session.user.role !== 'User'"> Go back </a>
+<a [routerLink]="['']" *ngIf="session.user.role === 'User'"> Go back </a>
 <br>
 <hr>
 <div class="newComplaint col s5">
