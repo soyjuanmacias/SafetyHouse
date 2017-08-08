@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HouseService } from '../../services/house.service'
+import { AlertsService } from '@jaspero/ng2-alerts'
 
 @Component({
   selector: 'app-add-house',
@@ -9,7 +10,10 @@ import { HouseService } from '../../services/house.service'
 export class AddHouseComponent implements OnInit {
   newHouse: Object = {}
 
-  constructor(private house: HouseService) { }
+  constructor(
+    private house: HouseService,
+    private _alert: AlertsService
+  ) { }
 
   ngOnInit() {
   }
@@ -22,10 +26,10 @@ export class AddHouseComponent implements OnInit {
         (house) => {
           console.log('Casa creada => Entro en this.house componente add-house =>')
           console.log(this.house)
+          this._alert.create('success', 'Alerta recibida correctamente, nos ponemos en contacto')
         },
         (err) => console.log(err)
       )
     this.newHouse = {}
   }
-
 }

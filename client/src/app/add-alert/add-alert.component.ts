@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service'
 import { AlertService } from '../../services/alert.service'
+import { AlertsService } from '@jaspero/ng2-alerts'
 
 @Component({
   selector: 'app-add-alert',
@@ -16,7 +17,8 @@ export class AddAlertComponent implements OnInit {
   }
   constructor(
     private session: SessionService,
-    private alert: AlertService
+    private alert: AlertService,
+    private _alert: AlertsService,
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,7 @@ addAlert(newAlert){
       (alert) => {
         console.log('Entro de nuevo en el subscribe del componente')
         console.log(alert)
+        this._alert.create('success', `Alerta recibida correctamente. Recibirás una llamada de Seguridad`)
       },
       (err) => console.log(err)
     )

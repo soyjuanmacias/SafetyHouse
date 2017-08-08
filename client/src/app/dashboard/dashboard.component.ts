@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service'
 import { AlertsService } from '@jaspero/ng2-alerts'
+import { NotificationsService } from 'angular2-notifications';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class DashboardComponent implements OnInit {
   user: any
   constructor(
     private session: SessionService,
-    private _alert: AlertsService
+    private _alert: AlertsService,
+    private _notificationsService: NotificationsService
   ) { }
 
   ngOnInit() {
@@ -20,6 +22,16 @@ export class DashboardComponent implements OnInit {
   }
 
   alert() {
-    this._alert.create('warning', `SOS, el vecino ${this.user.name} necesita ayuda!!`)
+    this._notificationsService.error(
+      'ALERTA SOS',
+      `SEGURIDAD!!! El vecino ${this.user.name} ha pulsado ALERTA ¡SOS!, Dirección: Calle ${this.user.street}, nº ${this.user.number}`,
+      {
+        timeOut: 30000,
+        showProgressBar: true,
+        pauseOnHover: false,
+        clickToClose: true,
+        maxLength: 0
+      }
+    )
   }
 }

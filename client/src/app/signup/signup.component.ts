@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service'
-
-// export interface newUserInter{
-//   email: String,
-//   username: String,
-//   password: String
-// }
+import { AlertsService } from '@jaspero/ng2-alerts'
 
 @Component({
   selector: 'app-signup',
@@ -27,7 +22,10 @@ export class SignupComponent implements OnInit {
     street: '',
   }
 
-  constructor(private session: SessionService) { }
+  constructor(
+    private session: SessionService,
+    private _alert: AlertsService
+  ) { }
 
   ngOnInit() {
   }
@@ -39,6 +37,7 @@ export class SignupComponent implements OnInit {
         (user) => {
           console.log('Usuario registrado en componente signup =>')
           console.log(user)
+          this._alert.create('success', 'Nuevo usuario añadido a la base de datos')
         },
         (err) => this.error = err
       );
