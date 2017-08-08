@@ -23,6 +23,8 @@ export class SignupComponent implements OnInit {
     password: '',
     role: '',
     email: '',
+    number: '',
+    street: '',
   }
 
   constructor(private session: SessionService) { }
@@ -48,6 +50,8 @@ export class SignupComponent implements OnInit {
         password: '',
         role: '',
         email: '',
+        street: '',
+        number: '',
       }
   }
 

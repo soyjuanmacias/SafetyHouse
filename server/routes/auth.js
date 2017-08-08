@@ -17,6 +17,8 @@ authRoutes.post('/signup', (req, res, next) => {
     telephone,
     name,
     role,
+    street,
+    number,
   } = req.body;
 
   if (!username || !password) {
@@ -47,6 +49,8 @@ authRoutes.post('/signup', (req, res, next) => {
       telephone,
       name,
       role,
+      street,
+      number,
     }).save().then(user => {
       req.login(user, (err) => {
         if (err) {

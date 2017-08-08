@@ -26,6 +26,7 @@ import { DetailComplaintComponent } from './detail-complaint/detail-complaint.co
 import { ContactComponent } from './contact/contact.component';
 import { ContactSecurityComponent } from './contact-security/contact-security.component';
 import { ContactUsersComponent } from './contact-users/contact-users.component'
+import { FilterPipe } from './pipes/filter.pipe'
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ContactUsersComponent } from './contact-users/contact-users.component'
     DetailComplaintComponent,
     ContactComponent,
     ContactSecurityComponent,
-    ContactUsersComponent
+    ContactUsersComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
