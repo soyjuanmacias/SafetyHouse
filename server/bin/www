@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('server:server');
+var debug = require('debug')('safetyhouse:server');
 var http = require('http');
 
 /**
@@ -20,19 +20,12 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-var io = require('socket.io')(http);
-app.io = io
-
-
-io.sockets.on('connection', function(socket) {
-  console.log('client connected!')
-})
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen('8080');
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 

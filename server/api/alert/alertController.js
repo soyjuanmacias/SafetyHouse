@@ -1,10 +1,9 @@
 const alertModel = require('./alertModel.js');
+var socket = require('socket.io-client')('http://localhost:3001');
 
 module.exports = {
-
   list: function(req, res) {
-    const {io} = req.app
-    io.sockets.emit('notifications', {type: 'urgent', message: 'MAN ROBAO EL COCHE'})
+    socket.emit('notification:security', 'MAN ROBAO');
 
     alertModel.find(function(err, alerts) {
       if (err) {

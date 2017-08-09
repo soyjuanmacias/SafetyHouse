@@ -2,16 +2,19 @@ import { Observable } from 'rxjs/Observable';
 import * as io from 'socket.io-client';
 
 export class NotificationsService {
-  private url = 'http://localhost:8080';
+  private url = 'http://localhost:3001';
   private socket;
 
   getNotifications() {
+    this.socket = io(this.url);
+    this.socket.on('notification:security', (data) => {
+      console.log('DATA', data)
+    });
+
     let observable = new Observable(observer => {
-      console.log('Cargando el servicio')
       this.socket = io(this.url);
-      this.socket.on('notifications', (data) => {
-        console.log('Imprimo data en servicio notifications =>')
-        console.log(data)
+      this.socket.on('notification:security', (data) => {
+        console.log('DATA', data)
         observer.next(data);
       });
     })

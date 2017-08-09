@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const alertController = require('./alertController.js');
 
-router.get('/', alertController.list);
+router.get('/', alertController.list)
 
 router.get('/:id', alertController.show);
 
