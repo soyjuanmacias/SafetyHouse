@@ -1,6 +1,9 @@
 <a [routerLink]="['../']"> Go back </a>
 <br>
 <hr>
+<div *ngFor="let message of messages">
+  {{message.text}}
+ </div>
 <div class="" *ngIf="alertList">
   <ul *ngFor="let alert of alertList">
     <hr><b>ALERT =>:</b> {{alert._id}}

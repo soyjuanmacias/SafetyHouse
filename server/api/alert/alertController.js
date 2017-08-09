@@ -3,6 +3,9 @@ const alertModel = require('./alertModel.js');
 module.exports = {
 
   list: function(req, res) {
+    const {io} = req.app
+    io.sockets.emit('notifications', {type: 'urgent', message: 'MAN ROBAO EL COCHE'})
+
     alertModel.find(function(err, alerts) {
       if (err) {
         return res.status(500).json({
@@ -43,7 +46,7 @@ module.exports = {
       emergencyLevel,
       status
     } = req.body
-    
+
     const alert = new alertModel({
       title,
       description,

@@ -57,7 +57,6 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    BrowserModule,
     BrowserAnimationsModule,
     JasperoAlertsModule,
     SimpleNotificationsModule.forRoot()
