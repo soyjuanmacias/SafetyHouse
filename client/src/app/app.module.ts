@@ -1,3 +1,5 @@
+import 'materialize-css'
+import { MaterializeModule } from 'angular2-materialize'
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
@@ -56,6 +58,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
   imports: [
     BrowserModule,
     FormsModule,
+    MaterializeModule,
     HttpModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,

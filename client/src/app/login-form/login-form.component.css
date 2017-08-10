@@ -1,3 +1,67 @@
-label, button{
+label, button {
   display: block;
+}
+
+.background {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #000000, #00204b);
+  background-size: 100%;
+  border: solid 1px #979797;
+  position: relative;
+}
+
+.login-card {
+  width: 328px;
+  height: 231px;
+  border-radius: 8px;
+  background-image: linear-gradient(to left, #001e46, #000103);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inputs {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.shape {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+}
+.login-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-forgot-password {
+  margin-left: 10px;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.btn-login {
+  color: red;
+  font-weight: 600;
+  width: 100%;
+}
+
+.error {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.error-text {
+  font-weight: 300;
+  font-size: 16px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
