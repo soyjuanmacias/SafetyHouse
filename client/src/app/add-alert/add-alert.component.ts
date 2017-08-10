@@ -18,6 +18,7 @@ export class AddAlertComponent implements OnInit {
   constructor(
     private session: SessionService,
     private alert: AlertService,
+    
     private _alert: AlertsService,
   ) { }
 
