@@ -66,12 +66,12 @@ module.exports = function() {
       }
       if (!user) {
         return next(null, false, {
-          message: "Incorrect username"
+          message: "Usuario incorrecto"
         })
       }
       if (!bcrypt.compareSync(password, user.password)) {
         return next(null, false, {
-          message: "Incorrect password"
+          message: "Contraseña incorrecta"
         })
       }
       return next(null, user);
