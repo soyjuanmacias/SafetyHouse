@@ -7,10 +7,10 @@ import { ContactService } from '../../services/contact.service'
   styleUrls: ['./contact-users.component.css']
 })
 export class ContactUsersComponent implements OnInit {
-  userList: Array<object> = []
+  userList: any = []
 
   constructor(
-    private contact: ContactService,
+    public contact: ContactService,
   )
   {
     this.contact.listUser()

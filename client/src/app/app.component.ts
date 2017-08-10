@@ -11,7 +11,7 @@ import './js/init.js'
 export class AppComponent implements OnInit {
   title = 'app';
   user: any
-  constructor(private session:SessionService){ }
+  constructor(public session:SessionService){ }
 
   ngOnInit() {
     this.user = this.session.user

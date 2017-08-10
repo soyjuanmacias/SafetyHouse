@@ -8,17 +8,17 @@ import { Router, ActivatedRoute } from '@angular/router'
   styleUrls: ['./detail-complaint.component.css']
 })
 export class DetailComplaintComponent implements OnInit, OnDestroy{
-  idComplaint: String
-  oneComplaint: Complaint
-  updateComplaint: Complaint
-  comment: String
+  idComplaint: any
+  oneComplaint: any
+  updateComplaint: any
+  comment: any
 
-  private time
+  public time
 
   constructor(
-    private complaint: ComplaintService,
-    private route: ActivatedRoute,
-    private router: Router,
+    public complaint: ComplaintService,
+    public route: ActivatedRoute,
+    public router: Router,
   ) { }
 
   ngOnInit() {

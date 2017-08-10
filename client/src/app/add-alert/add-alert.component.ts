@@ -9,19 +9,21 @@ import { AlertsService } from '@jaspero/ng2-alerts'
   styleUrls: ['./add-alert.component.css']
 })
 export class AddAlertComponent implements OnInit {
-  newAlert: Object = {
+  user: any
+  newAlert: any = {
     user: this.session.user._id,
     hour: new Date(),
     date: new Date(),
     status: 'sent',
   }
   constructor(
-    private session: SessionService,
-    private alert: AlertService,
-    private _alert: AlertsService,
+    public session: SessionService,
+    public alert: AlertService,
+    public _alert: AlertsService,
   ) { }
 
   ngOnInit() {
+    this.user = this.session.user
   }
 
 addAlert(newAlert){

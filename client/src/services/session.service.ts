@@ -10,7 +10,8 @@ export interface User{
   username: string,
   password: string,
   updated_at: Date,
-  created_at: Date
+  created_at: Date,
+  role: string,
 }
 
 @Injectable()
@@ -20,7 +21,7 @@ export class SessionService {
   BASE_URL: string=`${environment.BASE_URL}/auth`;
   options: object = {withCredentials:true};
 
-  constructor(private http:Http) {
+  constructor(public http:Http) {
     this.isLoggedIn().subscribe( (user:User) =>{
       console.log(`Welcome again user ${user.username}`)
       this.user = user;

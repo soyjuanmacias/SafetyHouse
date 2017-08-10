@@ -8,11 +8,11 @@ import { AlertsService } from '@jaspero/ng2-alerts'
   styleUrls: ['./add-house.component.css']
 })
 export class AddHouseComponent implements OnInit {
-  newHouse: Object = {}
+  newHouse: any = {}
 
   constructor(
-    private house: HouseService,
-    private _alert: AlertsService
+    public house: HouseService,
+    public _alert: AlertsService
   ) { }
 
   ngOnInit() {

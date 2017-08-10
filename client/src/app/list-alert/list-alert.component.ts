@@ -10,14 +10,14 @@ import { NotificationsService } from '../../services/notifications.service'
   providers: [NotificationsService]
 })
 export class ListAlertComponent implements OnInit, OnDestroy {
-  alertList: Array<object> = []
-  messages = [];
+  alertList: any = []
+  messages: any = [];
   connection
   message
 
   constructor(
-    private alert: AlertService,
-    private notifications: NotificationsService
+    public alert: AlertService,
+    public notifications: NotificationsService
   ) { }
 
   ngOnInit() {

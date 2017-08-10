@@ -12,9 +12,9 @@ import { NotificationsService } from 'angular2-notifications';
 export class DashboardComponent implements OnInit {
   user: any
   constructor(
-    private session: SessionService,
-    private _alert: AlertsService,
-    private _notificationsService: NotificationsService
+    public session: SessionService,
+    public _alert: AlertsService,
+    public _notificationsService: NotificationsService
   ) { }
 
   ngOnInit() {

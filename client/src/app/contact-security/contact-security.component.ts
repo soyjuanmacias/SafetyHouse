@@ -7,10 +7,10 @@ import { ContactService } from '../../services/contact.service'
   styleUrls: ['./contact-security.component.css']
 })
 export class ContactSecurityComponent implements OnInit {
-  securityList: Array<object> = []
+  securityList: any = []
 
   constructor(
-    private contact: ContactService,
+    public contact: ContactService,
   )
   {
     this.contact.listSecurity()

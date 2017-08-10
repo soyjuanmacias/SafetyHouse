@@ -11,17 +11,17 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class AddComplaintComponent implements OnInit {
   user: any
-  newComplaint: Object = {
+  newComplaint: any = {
     user: this.session.user._id,
     status: 'sent',
     date: new Date(),
     hour: new Date(),
   }
   constructor(
-    private session: SessionService,
-    private complaint: ComplaintService,
-    private _alert: AlertsService,
-    private _notificationsService: NotificationsService
+    public session: SessionService,
+    public complaint: ComplaintService,
+    public _alert: AlertsService,
+    public _notificationsService: NotificationsService
   ) { }
 
   ngOnInit() {
