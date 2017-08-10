@@ -7,3 +7,11 @@
 .add-complaint-form {
   display: block;
 }
+
+.btn-send-complaint {
+  width: 100%;
+}
+
+.container {
+  height: 100vh;
+}

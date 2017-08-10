@@ -1,14 +1,31 @@
-<div class="container">
-<div class="row">
-  <div class="col s12 m5 card-list list-box">
-    <app-list-complaint></app-list-complaint>
-  </div>
+<div class="container" *ngIf="session.user.role !== 'User'">
+  <div class="row">
+    <div class="col s12 m5 card-list list-box">
+      <app-list-complaint></app-list-complaint>
+    </div>
 
-  <div class="col s12 m2">
+    <div class="col s12 m2">
+    </div>
+    <div class="col s12 m5 card-list list-box">
+      <app-list-alert></app-list-alert>
+    </div>
   </div>
-  <div class="col s12 m5 card-list list-box">
-    <app-list-alert></app-list-alert>
-  </div>
-</div>
   <button class="btn" (click)="alert()">Alerta</button>
+</div>
+
+<div class="s12" *ngIf="session.user.role == 'User'">
+  <div class="first-menu">
+    <div class="logo">
+      <h4 class="h4-title-center" style="color:black">LOGO</h4>
+    </div>
+    <div [routerLink]="['/complaint/add']" class="complaint-div">
+      <h4 class="h4-title-center">DENUNCIAR</h4>
+    </div>
+    <div [routerLink]="['/alert/add']" class="alert-div">
+      <h4 class="h4-title-center">ALERTAR</h4>
+    </div>
+    <div [routerLink]="['/contact']" class="contact-div">
+      <h4 class="h4-title-center">CONTACTAR</h4>
+    </div>
+  </div>
 </div>

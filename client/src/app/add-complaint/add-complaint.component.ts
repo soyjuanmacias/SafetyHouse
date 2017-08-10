@@ -14,8 +14,6 @@ export class AddComplaintComponent implements OnInit {
   newComplaint: any = {
     user: this.session.user._id,
     status: 'sent',
-    date: new Date(),
-    hour: new Date(),
   }
   constructor(
     public session: SessionService,
@@ -29,6 +27,7 @@ export class AddComplaintComponent implements OnInit {
   }
 
   addComplaint() {
+    console.log(this.newComplaint)
     this.complaint.createComplaint(this.newComplaint)
       .subscribe(
         (complaint) => {
