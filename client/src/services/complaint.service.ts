@@ -48,6 +48,7 @@ export class ComplaintService {
     return this.http.post(`${this.BASE_URL}`, newComplaint, this.options)
       .map(res => {
         this.listComplaint()
+        console.log('Creo la denuncia, vengo de vuelta')
         return res.json()
       })
       .catch(this.handleError)

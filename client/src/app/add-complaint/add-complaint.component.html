@@ -1,53 +1,48 @@
-<a [routerLink]="['../']" *ngIf="session.user.role !== 'User'"> Go back </a>
-<a [routerLink]="['']" *ngIf="session.user.role === 'User'"> Go back </a>
-<br>
-<hr>
-<!-- <div class="newComplaint col s5">
-  <div>
+<div class="all-content-complaint">
+  <div class="cartel-arriba">
+    <p class="complaint-text">DENUNCIAR UN HECHO</p>
+    <!-- <p class="complaint-text">DENUNCIAR UN HECHO</p> -->
   </div>
-  <div>
-  </div>
-  <div>
-    <label>Img Url:</label>
-    <input class="add-complaint-form" type="text" [(ngModel)]="newComplaint.img_url">
-  </div>
-</div> -->
 <div class="container">
-  <div class="">
-    Cartel quiero denunciar una sustraccion
-  </div>
-  <div class="title-div">
-    <div class="input-field col s6">
-      <i class="small material-icons prefix">looks_one</i>
-      <input type="text" id="icon_title" [(ngModel)]="newComplaint.title" [(ngModel)]="newComplaint.date">
-      <label for="icon_title">Título</label>
+    <br>
+    <br>
+    <div class="title-div">
+      <h5>Título</h5>
+      <div class="input-field col s6">
+        <i class="small white-text material-icons prefix">looks_one</i>
+        <input type="text" id="icon_title" class="white-text" [(ngModel)]="newComplaint.title" [(ngModel)]="newComplaint.title">
+        <label for="icon_title">¿Qué ha ocurrido?</label>
+      </div>
     </div>
-  </div>
-  <div class="location-div">
+    <div class="location-div">
 
-  </div>
-  <div class="date-div">
-    <div class="input-field col s6">
-      <i class="small material-icons prefix">looks_4</i>
-    <input type="text" materialize="pickadate" class="datepicker" [(ngModel)]="newComplaint.date">
-    <label for="icon_title">Fecha</label>
-  </div>
-  </div>
-  <div class="hour-div">
-    <div class="input-field col s6">
-      <i class="small material-icons prefix">looks_4</i>
-      <input type="text" materialize="pickatime" class="timepicker" id="icon_title" [(ngModel)]="newComplaint.hour">
-      <label for="icon_title">Hora</label>
     </div>
-  </div>
-  <div class="hechos-div">
-    <div class="input-field col s6">
-      <i class="small material-icons prefix">looks_5</i>
-      <textarea class="materialize-textarea" rows="8" cols="40" type="text" id="icon_description"[(ngModel)]="newComplaint.description"></textarea>
-      <label for="icon_description">Describe los hechos</label>
+    <div class="date-div">
+      <h5>Fecha</h5>
+      <div class="input-field col s6">
+        <i class="small material-icons white-text prefix">looks_two</i>
+        <input id="date" type="text" materialize="pickadate" class="datepicker white-text" [(ngModel)]="newComplaint.date">
+        <label for="icon_date">¿Cuando ha ocurrido?</label>
+      </div>
     </div>
-  </div>
-  <div class="button-send">
-    <button class="btn" (click)="addComplaint()">Enviar</button>
+    <div class="hour-div">
+      <h5>Hora</h5>
+      <div class="input-field col s6">
+        <i class="small material-icons prefix white-text">looks_3</i>
+        <input type="text" class="timepicker white-text" id="icon_hour" [(ngModel)]="newComplaint.hour">
+        <label for="icon_hour">¿A qué hora ha ocurrido?</label>
+      </div>
+    </div>
+    <div class="hechos-div">
+      <h5>Hechos</h5>
+      <div class="input-field col s6 white-text">
+        <i class="small material-icons prefix">looks_4</i>
+        <textarea class="materialize-textarea" rows="8" cols="40" type="text" id="icon_description"[(ngModel)]="newComplaint.description"></textarea>
+        <label for="icon_description">¿Qué ha pasado? Escribe aquí los hechos</label>
+      </div>
+    </div>
+    <div class="button-send">
+      <button class="btn btn-send-complaint" (click)="addComplaint()">Enviar</button>
+    </div>
   </div>
 </div>

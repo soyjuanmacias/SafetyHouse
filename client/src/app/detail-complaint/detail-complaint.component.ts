@@ -22,19 +22,19 @@ export class DetailComplaintComponent implements OnInit, OnDestroy{
   ) { }
 
   ngOnInit() {
-    this.time = setInterval(() => {
-      this.route.params.subscribe(params => {
-        if (params['id'] != null) {
-          this.idComplaint = params['id']
-          this.complaint.showComplaint(this.idComplaint)
-            .subscribe(
-              (complaint) => {
-                this.oneComplaint = this.complaint.complaint
-              }
-            )
-        }
-      })
-    }, 1 * 1000)
+    // this.time = setInterval(() => {
+    //   this.route.params.subscribe(params => {
+    //     if (params['id'] != null) {
+    //       this.idComplaint = params['id']
+    //       this.complaint.showComplaint(this.idComplaint)
+    //         .subscribe(
+    //           (complaint) => {
+    //             this.oneComplaint = this.complaint.complaint
+    //           }
+    //         )
+    //     }
+    //   })
+    // }, 1 * 1000)
     // this.complaint.getCreateComplaintEmitter()
     //   .subscribe(
     //
@@ -42,7 +42,7 @@ export class DetailComplaintComponent implements OnInit, OnDestroy{
   }
 
 ngOnDestroy() {
-  clearInterval(this.time)
+  // clearInterval(this.time)
 }
 
   changeStatus() {

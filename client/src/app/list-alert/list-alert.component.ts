@@ -1,13 +1,11 @@
 import * as io from 'socket.io-client';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AlertService } from '../../services/alert.service'
-import { NotificationsService } from '../../services/notifications.service'
 
 @Component({
   selector: 'app-list-alert',
   templateUrl: './list-alert.component.html',
   styleUrls: ['./list-alert.component.css'],
-  providers: [NotificationsService]
 })
 export class ListAlertComponent implements OnInit, OnDestroy {
   alertList: any = []
@@ -17,7 +15,6 @@ export class ListAlertComponent implements OnInit, OnDestroy {
 
   constructor(
     public alert: AlertService,
-    public notifications: NotificationsService
   ) { }
 
   ngOnInit() {
@@ -26,10 +23,6 @@ export class ListAlertComponent implements OnInit, OnDestroy {
     socket.on('notification:security', function (data) {
       console.log(arguments)
     });
-
-    this.connection = this.notifications.getNotifications().subscribe(message => {
-      this.messages.push(message);
-    })
 
     this.alert
       .listAlert()
@@ -42,6 +35,6 @@ export class ListAlertComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.connection.unsubscribe();
+    // this.connection.unsubscribe();
   }
 }

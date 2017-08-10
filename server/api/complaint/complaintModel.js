@@ -7,7 +7,7 @@ const complaintSchema = new Schema({
 	'img_url' : String,
 	'lat' : Number,
 	'lon' : Number,
-	'date' : Date,
+	'date' : String,
 	'user' : {
 	 	type: Schema.Types.ObjectId,
 	 	ref: 'User'
@@ -21,7 +21,7 @@ const complaintSchema = new Schema({
 		],
 		default: 'sent'
 	},
-	'hour' : Date,
+	'hour' : String,
 	'comment': String
 });
 

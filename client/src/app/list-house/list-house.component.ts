@@ -10,18 +10,18 @@ export class ListHouseComponent implements OnInit, OnDestroy {
   houseList: Array<Object> = []
   private time
   constructor(private house: HouseService) {
-    this.time = setInterval(() => {
-      this.house.listHouse()
-        .subscribe(
-          (complaint) => {
-            this.houseList = this.house.houseList
-          }
-        )
-    }, 10 * 1000)
+    // this.time = setInterval(() => {
+    //   this.house.listHouse()
+    //     .subscribe(
+    //       (complaint) => {
+    //         this.houseList = this.house.houseList
+    //       }
+    //     )
+    // }, 10 * 1000)
   }
 
   ngOnDestroy() {
-    clearInterval(this.time)
+    // clearInterval(this.time)
   }
 
   ngOnInit() {

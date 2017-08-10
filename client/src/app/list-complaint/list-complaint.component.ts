@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ComplaintService } from '../../services/complaint.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ComplaintService } from '../../services/complaint.service';
   templateUrl: './list-complaint.component.html',
   styleUrls: ['./list-complaint.component.css']
 })
-export class ListComplaintComponent implements OnInit, OnDestroy {
+export class ListComplaintComponent implements OnInit {
   complaintList: Array<object> = []
   subscription: any
   private time
@@ -23,10 +23,6 @@ export class ListComplaintComponent implements OnInit, OnDestroy {
       )
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
-  }
-
   ngOnInit() {
     this.complaint.listComplaint()
       .subscribe(
@@ -38,8 +34,6 @@ export class ListComplaintComponent implements OnInit, OnDestroy {
       (err) => console.log(err)
       )
 
-    this.subscription = this.complaint.getCreateComplaintEmitter()
-      .subscribe(list => this.updateList(list))
   }
 
   updateList(list) {

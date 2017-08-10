@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { SessionService } from '../services/session.service'
-import { NotificationsService } from '../services/notifications.service'
 import { ComplaintService } from '../services/complaint.service'
+// import { NotificationsService } from '../services/notifications.service'
 import { AlertService } from '../services/alert.service'
 import { HouseService } from '../services/house.service'
 import { ContactService } from '../services/contact.service'
@@ -65,7 +65,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     JasperoAlertsModule,
     SimpleNotificationsModule.forRoot()
   ],
-  providers: [SessionService, ComplaintService, AlertService, HouseService, ContactService, NotificationsService],
+  providers: [SessionService, ComplaintService, AlertService, HouseService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

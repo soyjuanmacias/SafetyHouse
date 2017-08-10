@@ -25,7 +25,8 @@
 }
 
 .complaint-div {
-  background-color: rgba(0, 32, 75, 0.7);
+  background-image: url(../../assets/complaint.jpg);
+  background-size: cover;
   color: white;
   border-style: solid;
   border-width: 2px;
@@ -34,7 +35,8 @@
   position: relative;
 }
 .alert-div {
-  background-color: rgba(0, 32, 75, 0.7);
+  background-image: url(../../assets/alert.jpg);
+  background-size: cover;
   border-style: solid;
   border-width: 2px;
   border-color: white;
@@ -42,7 +44,8 @@
   position: relative;
 }
 .contact-div {
-  background-color: rgba(0, 32, 75, 0.7);
+  background-image: url(../../assets/contact.jpg);
+  background-size: cover;
   border-style: solid;
   border-width: 2px;
   border-color: white;
