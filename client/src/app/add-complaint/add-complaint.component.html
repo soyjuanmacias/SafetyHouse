@@ -41,8 +41,13 @@
         <label for="icon_description">¿Qué ha pasado? Escribe aquí los hechos</label>
       </div>
     </div>
-    <div class="button-send">
+    <div class="button-send" *ngIf="!isComplaintSent">
       <button class="btn btn-send-complaint" (click)="addComplaint()">Enviar</button>
     </div>
+    <div class="button-back button-send-complaint" *ngIf="isComplaintSent">
+      <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+      <br><br><br><br><br>
+    </div>
+    <br><br>
   </div>
 </div>

@@ -16,16 +16,18 @@ export class AddComplaintComponent implements OnInit {
     user: this.session.user._id,
     status: 'sent',
   }
+  isComplaintSent: Boolean = false
   constructor(
     public session: SessionService,
     public complaint: ComplaintService,
     public _alert: AlertsService,
     public router: Router,
-    public routes: ActivatedRoute
+    public route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.user = this.session.user
+    console.log(this.isComplaintSent)
   }
 
   addComplaint() {
@@ -45,9 +47,8 @@ export class AddComplaintComponent implements OnInit {
         //     maxLength: 0
         //   }
         // )
-        setTimeout(function() {
-          this.router.navigate(['/'])
-        }, 2 * 1000);
+        this.isComplaintSent = !this.isComplaintSent
+        console.log(this.isComplaintSent)
       },
       (err) => console.log(err)
       )
