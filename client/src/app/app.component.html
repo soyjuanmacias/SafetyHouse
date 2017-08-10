@@ -30,7 +30,7 @@
 </div>
 
 
-<router-outlet *ngIf="session.user && session.startLoginCompleted session.user.role !== 'User'"></router-outlet>
+<router-outlet *ngIf="session.user && session.startLoginCompleted"></router-outlet>
 
 <jaspero-alerts [defaultSettings]="options"></jaspero-alerts>
 <simple-notifications></simple-notifications>
