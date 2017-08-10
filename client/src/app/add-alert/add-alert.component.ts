@@ -17,9 +17,9 @@ export class AddAlertComponent implements OnInit {
     status: 'sent',
   }
   constructor(
-    public session: SessionService,
-    public alert: AlertService,
-    public _alert: AlertsService,
+    private session: SessionService,
+    private alert: AlertService,
+    private _alert: AlertsService,
   ) { }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ addAlert(newAlert){
   this.alert.createAlert(this.newAlert)
     .subscribe(
       (alert) => {
-        console.log('Entro de nuevo en el subscribe del componente')
+        console.log('Entro de nuevo en el subscribeee del componente')
         console.log(alert)
         this._alert.create('success', `Alerta recibida correctamente. Recibirás una llamada de Seguridad`)
       },
