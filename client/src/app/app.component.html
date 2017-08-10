@@ -29,7 +29,7 @@
 
 
 <router-outlet *ngIf="session.user && session.startLoginCompleted"></router-outlet>
-<jaspero-alerts></jaspero-alerts>
+<jaspero-alerts [defaultSettings]="options"></jaspero-alerts>
 <simple-notifications></simple-notifications>
 <br><br>
 <div class="container">
