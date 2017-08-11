@@ -2,8 +2,8 @@
 <div *ngIf="session.user && session.startLoginCompleted && session.user.role !== 'User'">
   <nav>
     <div class="nav-wrapper safety-menu">
-      <a [routerLink]="''" class="brand-logo">Logo</a>
-      <a [routerLink]="''" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a [routerLink]="'#'" class="brand-logo">Logo</a>
+      <a [routerLink]="'#'" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
       <ul class="right hide-on-med-and-down">
         <li><a [routerLink]="['']">Dashboard</a></li>

@@ -18,7 +18,7 @@ const alertSchema = new Schema({
 			'Media',
 			'Baja'
 		],
-		default: 'sent'
+		default: 'Urgente'
 	},
 	'status' : {
 		type: String,

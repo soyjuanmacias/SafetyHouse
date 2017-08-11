@@ -19,7 +19,7 @@ const complaintSchema = new Schema({
 			'En proceso',
 			'Completada'
 		],
-		default: 'sent'
+		default: 'Enviada'
 	},
 	'hour' : String,
 	'comment': String

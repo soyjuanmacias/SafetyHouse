@@ -1,19 +1,38 @@
-<a [routerLink]="['../']"> Go back </a>
-<br>
-<hr>
-<div *ngFor="let message of messages">
-  {{message.text}}
- </div>
-<div class="" *ngIf="alertList">
-  <ul *ngFor="let alert of alertList">
-    <hr><b>ALERT =>:</b> {{alert._id}}
-    <li><b>Status:</b> {{alert.status}}</li>
-    <li><b>Title:</b> {{alert.title}}</li>
-    <li><b>Description:</b> {{alert.description}}</li>
-    <li><b>User ID who sent:</b> {{alert.user}}</li>
-    <li><b>Lat Map:</b> {{alert.lat}}</li>
-    <li><b>Lon Map:</b> {{alert.lon}}</li>
-    <li><b>LEVEL OF EMERGENCY:</b> {{alert.emergencyLevel}}</li>
-    <hr>
-  </ul>
+<div class="all-content-complaint">
+  <br>
+  <div class="cartel-arriba">
+    <p class="complaint-text">LISTADO DE DENUNCIAS</p>
+  </div>
+  <br>
+  <div class="container">
+    <div class="search-user input-field">
+      <i class="small white-text material-icons prefix">done_all</i>
+      <input type="text" id="icon_search" class="white-text"[(ngModel)]="pattern" />
+      <label for="icon_search">Filtrar por estado</label>
+      <br>
+    </div>
+    <ul *ngFor="let alert of alertList | filter : 'emergencyLevel' : pattern">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="http://www.industrialrelations.nsw.gov.au/mobile0c9a66/common_res/redesign_ir/images/rebrand/icon_images/Complaint_icon.png" class="img-avatar circle">
+          <span class="title"><b>Emergencia: {{alert.emergencyLevel}}</b></span>
+          <b><h5><b>Denuncia:</b> {{alert.title}}</h5></b>
+            <p>
+            <br> <b>Descripción de los hechos:</b> <p>{{alert.description}}</p>
+          <a href="#" class="secondary-content"><i class="material-icons blue-text darken-3">event_note</i></a>
+          <br>
+          <button [routerLink]="['../', alert._id, 'details']" class="btn btn-contacto blue darken-3"> VER INFORMACIÓN </button>
+        </li>
+      </ul>
+    </ul>
+    <div class="button-back button-send-complaint">
+      <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+      <br><br><br><br><br>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
 </div>

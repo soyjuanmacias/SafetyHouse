@@ -22,8 +22,8 @@
     var current = e.currentTarget;
     // looping on every opened menu (.active)
     $('.click-to-toggle.active').filter(function() {
-        // close it if it's not the clicked menu (with materialize's closeFAB())
-        return !(this === current);
+      // close it if it's not the clicked menu (with materialize's closeFAB())
+      return !(this === current);
     }).closeFAB();
-});
+  });
 })(jQuery);
