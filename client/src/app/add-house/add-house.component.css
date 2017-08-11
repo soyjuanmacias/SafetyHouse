@@ -1,0 +1,50 @@
+.all-content-complaint {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  height: 100%;
+}
+
+.expanding-component {
+  height: 100%;
+}
+
+.complaint-element {
+  border: 2px solid grey;
+  margin: 20px;
+  width: 400px;
+}
+
+.cartel-arriba {
+  top: 3%;
+  height: 8vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  position: relative;
+}
+
+.complaint-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-complaint-form {
+  display: block;
+}
+
+.btn-send-complaint {
+  width: 100%;
+  height: 43px;
+  border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(148, 236, 241, 0.2);
+}
+
+h5 {
+  color: white;
+}
+
+.button-back {
+  margin-bottom: 30px;
+}

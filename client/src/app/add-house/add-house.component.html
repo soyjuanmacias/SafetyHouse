@@ -1,4 +1,4 @@
-<a [routerLink]="['../']"> Go back </a>
+<!-- <a [routerLink]="['../']"> Go back </a>
 <br>
 <hr>
 <div class="newHouse col s5">
@@ -23,4 +23,73 @@
     <input type="checkbox" [checked]="newHouse.backAccess" (change)="newHouse.backAccess = !newHouse.backAccess" />
   </div>
   <button class="btn" (click)="addHouse()">Enviar</button>
+</div> -->
+
+<div class="expanding-component">
+  <div class="all-content-complaint">
+    <div class="cartel-arriba">
+      <p class="complaint-text">CREAR NUEVA VIVIENDA</p>
+      <!-- <p class="complaint-text">DENUNCIAR UN HECHO</p> -->
+    </div>
+    <div class="container">
+      <br>
+      <br>
+      <div class="title-div">
+        <h5>Calle</h5>
+        <div class="input-field col s6">
+          <i class="small white-text material-icons prefix">looks_one</i>
+          <input type="text" id="icon_title" class="white-text" [(ngModel)]="newHouse.street">
+          <label for="icon_title">Calle</label>
+        </div>
+      </div>
+      <div class="location-div">
+
+      </div>
+      <div class="date-div">
+        <h5>Número</h5>
+        <div class="input-field col s6">
+          <i class="small material-icons white-text prefix">looks_two</i>
+          <input id="date" type="number" class="white-text" [(ngModel)]="newHouse.number">
+          <label for="icon_date">Número</label>
+        </div>
+      </div>
+      <div class="hour-div">
+        <h5>Plantas</h5>
+        <div class="input-field col s6">
+          <i class="small material-icons prefix white-text">looks_3</i>
+          <input type="number" class="white-text" id="icon_hour" [(ngModel)]="newHouse.floors">
+          <label for="icon_hour">Número de pisos</label>
+        </div>
+      </div>
+      <div class="hechos-div">
+        <h5>Hechos</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_4</i>
+          <input type="number" class="white-text" id="icon_hour" [(ngModel)]="newHouse.m2">
+          <label for="icon_description">Metros cuadrados</label>
+        </div>
+      </div>
+      <div class="hechos-div">
+        <h5>Acceso trasero</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_5</i>
+          <input type="checkbox" [checked]="newHouse.backAccess" (change)="newHouse.backAccess = !newHouse.backAccess" />
+          <label for="icon_description">¿Tiene acceso trasero?</label>
+        </div>
+        <br><br>
+      </div>
+      <div class="button-send">
+        <button class="btn btn-send-complaint" (click)="addHouse()">Guardar vivienda</button>
+      </div>
+      <br>
+      <div class="button-back button-send-complaint">
+        <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+        <br><br><br><br><br>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
 </div>
