@@ -36,8 +36,12 @@ export class SessionService {
   }
 
   signup(newUser):Observable<User> {
+    console.log('Entro en crear usuario')
     return this.http.post(`${this.BASE_URL}/signup`, newUser, this.options)
-      .map(res => res.json())
+      .map(res => {
+        console.log('Entro en map del servicio signup =>')
+        res.json()
+      })
       .catch(this.handleError);
   }
 

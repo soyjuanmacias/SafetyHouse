@@ -1,19 +1,28 @@
-<a [routerLink]="['../']"> Go back </a>
-<div class="search-user">
-  <label> Buscar </label>
-  <br>
-  <input type="text" [(ngModel)]="pattern" />
-  <br>
-</div>
-<ul *ngFor="let user of userList | filter : 'street' : pattern">
-  <hr>
-  <li>Nombre: {{user.name}}</li>
-  <li>Apellidos: {{user.lastName}}</li>
-  <li>Dirección: Calle: {{ user.street }}, Nº: {{ user.number }}
-  </li>
-  <li>Email: {{user.email}}</li>
-  <li>Contato: {{user.telephone}}</li>
-  <li>Vecino: {{user.role}}</li>
-  <button [routerLink]="['../', user._id, 'details']"> Ver usuario </button>
-  <hr>
-</ul>
+<div class="all-content-contact">
+  <br><br>
+  <div class="container">
+    <div class="search-user input-field">
+      <i class="small white-text material-icons prefix">location_searching</i>
+      <input type="text" id="icon_search" [(ngModel)]="pattern" />
+      <label for="icon_search">Filtrar por calle</label>
+      <br>
+    </div>
+    <ul *ngFor="let user of userList | filter : 'street' : pattern">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <span class="title"><b>{{user.name}}</b></span>
+          <p>{{user.lastName}}
+            <br>
+            Email: {{user.email}}
+            <br>
+            Dirección: Calle: {{ user.street }}, Nº: {{ user.number }}
+            <br>
+            Teléfono de contacto: {{user.telephone}}
+            <br>
+            Perfil: {{user.role}}</p>
+            <a href="#" class="secondary-content"><i class="material-icons">verified_user</i></a>
+          </li>
+        </ul>
+      </ul>
+    </div>
+  </div>

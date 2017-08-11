@@ -1,5 +1,5 @@
-import * as io from 'socket.io-client';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+// import * as io from 'socket.io-client';
+import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../../services/alert.service'
 
 @Component({
@@ -7,10 +7,9 @@ import { AlertService } from '../../services/alert.service'
   templateUrl: './list-alert.component.html',
   styleUrls: ['./list-alert.component.css'],
 })
-export class ListAlertComponent implements OnInit, OnDestroy {
+export class ListAlertComponent implements OnInit {
   alertList: any = []
   messages: any = [];
-  connection
   message
 
   constructor(
@@ -18,11 +17,11 @@ export class ListAlertComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    var socket = io('http://localhost:3001');
+    // var socket = io('http://localhost:3001');
 
-    socket.on('notification:security', function (data) {
-      console.log(arguments)
-    });
+    // socket.on('notification:security', function (data) {
+    //   console.log(arguments)
+    // });
 
     this.alert
       .listAlert()
@@ -32,9 +31,5 @@ export class ListAlertComponent implements OnInit, OnDestroy {
       },
       (err) => console.log(err)
       )
-  }
-
-  ngOnDestroy() {
-    // this.connection.unsubscribe();
   }
 }

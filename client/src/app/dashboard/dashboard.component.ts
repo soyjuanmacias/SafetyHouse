@@ -11,8 +11,10 @@ import 'materialize-css';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit {
   user: any
+
   constructor(
     public session: SessionService,
     public _alert: AlertsService,
