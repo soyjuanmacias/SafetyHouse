@@ -1,0 +1,38 @@
+.all-content-contact {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  height: 100%;
+}
+
+.cartel-arriba {
+  top: 3%;
+  height: 8vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  position: relative;
+}
+
+.btn-send-complaint {
+  width: 100%;
+  height: 43px;
+  border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(148, 236, 241, 0.2);
+}
+
+.contact-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-avatar {
+  height: 80px;
+  width: 80px;
+}
+
+.btn-contacto {
+  border-radius: 2px;
+	border-radius: 2px;
+}

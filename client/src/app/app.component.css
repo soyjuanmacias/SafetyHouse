@@ -1,0 +1,9 @@
+.safety-menu {
+  /*background-color: #001025;*/
+  color: black;
+  background-image: linear-gradient(45deg, #000408, #001d45);
+}
+
+.btn-exit {
+  background-image: linear-gradient(to left, #001e46, #000103);
+}

@@ -7,7 +7,7 @@
   <div class="container">
     <div class="search-user input-field">
       <i class="small white-text material-icons prefix">location_searching</i>
-      <input type="text" id="icon_search" [(ngModel)]="pattern" />
+      <input type="text" id="icon_search" class="white-text" [(ngModel)]="pattern" />
       <label for="icon_search">Filtrar por calle</label>
       <br>
     </div>
@@ -18,9 +18,9 @@
           <span class="title"><b>{{user.name}}</b></span>
           <p><b>{{user.lastName}}</b>
             <br> <b>Email:</b> {{user.email}}
-            <br> Dirección: Calle: {{ user.street }}, Nº: {{ user.number }}
-            <br> Teléfono de contacto: {{user.telephone}}
-            <br> Perfil: {{user.role}}</p>
+            <br> <b>Dirección:</b> Calle: {{ user.street }}, Nº: {{ user.number }}
+            <br> <b>Teléfono de contacto:</b> {{user.telephone}}
+            <br> <b>Perfil:</b> {{user.role}}</p>
           <a href="#" class="secondary-content"><i class="material-icons blue-text darken-3">verified_user</i></a>
           <br>
           <button [routerLink]="['']" class="btn btn-contacto blue darken-3"> Contactar con {{user.name}} </button>

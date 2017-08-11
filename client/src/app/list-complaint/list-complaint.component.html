@@ -1,13 +1,38 @@
-<a [routerLink]="['../']"> Go back </a>
-<ul *ngFor="let complaint of complaintList">
-  <hr>
-  Complaint number: {{complaint._id}}
-  <li>Status: {{complaint.status}}</li>
-  <li>Title: {{complaint.title}}</li>
-  <li>Description: {{complaint.description}}</li>
-  <li>User ID who sent: {{complaint.user}}</li>
-  <li>Lat Map: {{complaint.lat}}</li>
-  <li>Lon Map: {{complaint.lon}}</li>
-  <button [routerLink]="['../', complaint._id, 'details']"> Ver detalles </button>
-  <hr>
-</ul>
+<div class="all-content-contact">
+  <br>
+  <div class="cartel-arriba">
+    <p class="contact-text">LISTADO DE DENUNCIAS</p>
+  </div>
+  <br>
+  <div class="container">
+    <div class="search-user input-field">
+      <i class="small white-text material-icons prefix">done_all</i>
+      <input type="text" id="icon_search" class="white-text"[(ngModel)]="pattern" />
+      <label for="icon_search">Filtrar por estado</label>
+      <br>
+    </div>
+    <ul *ngFor="let complaint of complaintList | filter : 'status' : pattern">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="http://www.industrialrelations.nsw.gov.au/mobile0c9a66/common_res/redesign_ir/images/rebrand/icon_images/Complaint_icon.png" class="img-avatar circle">
+          <span class="title"><b>{{complaint.status}}</b></span>
+          <b><h5><b>Denuncia:</b> {{complaint.title}}</h5></b>
+            <p><br> <b>Fecha:</b> {{complaint.date | date: 'dd/MM/yyyy'}}
+            <br> <b>Descripción de los hechos:</b> <p>{{complaint.description}}</p>
+          <a href="#" class="secondary-content"><i class="material-icons blue-text darken-3">event_note</i></a>
+          <br>
+          <button [routerLink]="['../', complaint._id, 'details']" class="btn btn-contacto blue darken-3"> VER INFORMACIÓN </button>
+        </li>
+      </ul>
+    </ul>
+    <div class="button-back button-send-complaint">
+      <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+      <br><br><br><br><br>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+</div>
