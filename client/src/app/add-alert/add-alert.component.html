@@ -1,29 +1,34 @@
-<a [routerLink]="['../']" *ngIf="session.user.role !== 'User'"> Go back </a>
-<a [routerLink]="['']" *ngIf="session.user.role === 'User'"> Go back </a>
-<br>
-<hr>
-<div class="newAlert col s5">
-  <div>
-    <label>¿Que está pasando?</label>
-    <input type="text" [(ngModel)]="newAlert.title">
+<div class="all-content-alert">
+  <div class="cartel-arriba">
+    <p class="alert-text">ALERTAR AHORA</p>
   </div>
-  <div>
-    <label for="complaint-description">Describe los hechos:</label>
-    <input type="text" [(ngModel)]="newAlert.description">
+  <div class="container">
+    <br>
+    <br>
+    <div class="title-div">
+      <h5>¿Qué ocurre?</h5>
+      <div class="input-field col s6">
+        <i class="small white-text material-icons prefix">looks_one</i>
+        <input type="text" id="icon_title" class="white-text" [(ngModel)]="newAlert.title">
+        <label for="icon_title">¿Qué está ocurriendo?</label>
+      </div>
+    </div>
+      <div class="hechos-div">
+        <h5>Hechos</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_two</i>
+          <textarea class="materialize-textarea" rows="8" cols="40" type="text" id="icon_description" [(ngModel)]="newAlert.description"></textarea>
+          <label for="icon_description">¿Qué está pasando ahora? Escribe aquí...</label>
+        </div>
+      </div>
+    <div class="button-send" *ngIf="!isAlertSent">
+      <button class="btn btn-send-alert" (click)="addAlert()">Alertar de inmediato</button>
+    </div>
+    <br><br>
+    <div class="button-back button-send-alert">
+      <button class="btn btn-send-alert" [routerLink]="['']">Volver atrás</button>
+      <br><br><br><br><br>
+    </div>
+    <br><br>
   </div>
-  <div>
-    <label>Img Url:</label>
-    <input class="add-complaint-form" type="text" [(ngModel)]="newAlert.img_url">
-  </div>
-  <div class="">
-    <label>Prioridad</label>
-    <select name="emergencyLevel" [(ngModel)]="newAlert.emergencyLevel">
-      <optgroup label="Prioridad">
-      <option value="Baja">Baja</option>
-      <option value="Media">Media</option>
-      <option value="Urgente">Urgente</option>
-      <option value="Muy urgente">Muy urgente</option>
-    </select>
-  </div>
-  <button class="btn" (click)="addAlert()">Enviar</button>
 </div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service'
 import { AlertsService } from '@jaspero/ng2-alerts'
 import { NotificationsService } from 'angular2-notifications';
+import 'jquery';
+import 'materialize-css';
 
 
 @Component({

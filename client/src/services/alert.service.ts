@@ -34,6 +34,8 @@ export class AlertService {
   }
 
   createAlert(newAlert):Observable<Alert>{
+    console.log('Llega la alerta hasta aquí => ')
+    console.log(newAlert)
     return this.http.post(`${this.BASE_URL}`, newAlert, this.options)
       .map(res => {
         console.log('map después de la respuesta del post servicio alert =>')

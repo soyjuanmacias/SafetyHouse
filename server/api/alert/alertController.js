@@ -3,7 +3,7 @@ var socket = require('socket.io-client')('http://localhost:3001');
 
 module.exports = {
   list: function(req, res) {
-    socket.emit('notification:security', 'MAN ROBAO');
+    // socket.emit('notification:security', 'MAN ROBAO');
 
     alertModel.find(function(err, alerts) {
       if (err) {
@@ -37,6 +37,8 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log('Entro en la alerta create => ');
+    console.log(req.body)
     const {
       title,
       description,

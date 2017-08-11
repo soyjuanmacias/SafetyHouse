@@ -10,12 +10,11 @@ import { AlertsService } from '@jaspero/ng2-alerts'
 })
 export class AddAlertComponent implements OnInit {
   user: any
-  newAlert: any = {
+  newAlert: Object = {
     user: this.session.user._id,
-    hour: new Date(),
-    date: new Date(),
     status: 'sent',
   }
+  isAlertSent: Boolean = false
   constructor(
     private session: SessionService,
     private alert: AlertService,
@@ -33,6 +32,7 @@ addAlert(newAlert){
         console.log('Entro de nuevo en el subscribe del componente')
         console.log(alert)
         this._alert.create('success', `Alerta recibida correctamente. Recibirás una llamada de Seguridad`)
+        this.isAlertSent = !this.isAlertSent
       },
       (err) => console.log(err)
     )

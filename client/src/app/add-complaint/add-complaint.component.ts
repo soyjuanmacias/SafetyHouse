@@ -27,11 +27,9 @@ export class AddComplaintComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.session.user
-    console.log(this.isComplaintSent)
   }
 
   addComplaint() {
-    console.log(this.newComplaint)
     this.complaint.createComplaint(this.newComplaint)
       .subscribe(
       (complaint) => {
@@ -48,7 +46,6 @@ export class AddComplaintComponent implements OnInit {
         //   }
         // )
         this.isComplaintSent = !this.isComplaintSent
-        console.log(this.isComplaintSent)
       },
       (err) => console.log(err)
       )
