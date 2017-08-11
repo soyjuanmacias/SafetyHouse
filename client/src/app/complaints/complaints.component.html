@@ -1,6 +1,22 @@
-<a [routerLink]="['../']"> Go back </a>
+<!-- <a [routerLink]="['../']"> Go back </a>
 <br>
-<hr>
-<a [routerLink]="['list']"> List all complaints </a>
-<br><br>
-<a [routerLink]="['add']"> Create new complaint </a>
+<hr> -->
+<!-- <div class="expanding-component"> -->
+  <div class="all-content-complaint">
+    <div class="container">
+    <div class="cartel-arriba">
+      <p class="complaint-text">DENUNCIAS</p>
+    </div>
+    <div class="first-menu">
+      <div [routerLink]="['/complaint/add']" class="complaint-div">
+        <h4 class="h4-title-center">LISTAR DENUNCIAS</h4>
+      </div>
+      <div [routerLink]="['/alert/add']" class="alert-div">
+        <h4 class="h4-title-center">CREAR DENUNCIA</h4>
+      </div>
+      <div [routerLink]="['']" class="contact-div">
+        <h4 class="h4-title-center">VOLVER ATRÁS</h4>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,3 +7,8 @@
 .btn-exit {
   background-image: linear-gradient(to left, #001e46, #000103);
 }
+
+.all-content-complaint-father {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  height: 100vh;
+}

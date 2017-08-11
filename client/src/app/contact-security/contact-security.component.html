@@ -1,4 +1,4 @@
-<a [routerLink]="['../']"> Go back </a>
+<!-- <a [routerLink]="['../']"> Go back </a>
 <ul *ngFor="let security of securityList">
   <hr>
   <li>Nombre: {{security.name}}</li>
@@ -8,4 +8,46 @@
   <li>Puesto: {{security.role}}</li>
   <button [routerLink]="['../', security._id, 'details']"> Ver vigilante </button>
   <hr>
-</ul>
+</ul> -->
+
+
+<div class="all-content-contact">
+  <br>
+  <div class="cartel-arriba">
+    <p class="contact-text">LISTADO DE USUARIOS</p>
+  </div>
+  <br>
+  <div class="container">
+    <div class="search-user input-field">
+      <i class="small white-text material-icons prefix">location_searching</i>
+      <input type="text" id="icon_search" class="white-text" [(ngModel)]="pattern" />
+      <label for="icon_search">Filtrar por calle</label>
+      <br>
+    </div>
+    <ul *ngFor="let security of securityList | filter : 'name' : pattern">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="https://diegoangeles.com/wp-content/themes/privado/img/avatar.png" class="img-avatar circle">
+          <span class="title"><b>{{security.name}}</b></span>
+          <p><b>{{security.lastName}}</b>
+            <br> <b>Email:</b> {{security.email}}
+            <br> <b>Dirección:</b> Calle: {{ security.street }}, Nº: {{ security.number }}
+            <br> <b>Teléfono de contacto:</b> {{security.telephone}}
+            <br> <b>Perfil:</b> {{security.role}}</p>
+          <a href="#" class="secondary-content"><i class="material-icons blue-text darken-3">verified_user</i></a>
+          <br>
+          <button [routerLink]="['../']" class="btn btn-contacto blue darken-3"> Contactar con {{user.name}} </button>
+        </li>
+      </ul>
+    </ul>
+    <div class="button-back button-send-complaint">
+      <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+      <br><br><br><br><br>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+</div>
