@@ -22,7 +22,7 @@ export class DetailComplaintComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    this.time = setTimeout(() => {
+    this.time = setInterval(() => {
       this.route.params.subscribe(params => {
         if (params['id'] != null) {
           this.idComplaint = params['id']
@@ -34,20 +34,20 @@ export class DetailComplaintComponent implements OnInit{
             )
         }
       })
-    }, 2000);
+    }, 1* 1000)
   }
 
 
   changeStatus() {
-    if (this.oneComplaint.status == 'inProcess') {
+    if (this.oneComplaint.status == 'En proceso') {
       return this.updateComplaint = {
-        status: 'sent',
+        status: 'Enviada',
         comment: this.comment
       }
     }
-    if (this.oneComplaint.status == 'sent') {
+    if (this.oneComplaint.status == 'Enviada') {
       return this.updateComplaint = {
-        status: 'inProcess',
+        status: 'En proceso',
         comment: this.comment
       }
     }
@@ -55,7 +55,7 @@ export class DetailComplaintComponent implements OnInit{
 
   openComplaint() {
     this.updateComplaint = {
-      status: 'inProcess',
+      status: 'En proceso',
       comment: this.comment
     }
     this.complaint.update(this.idComplaint, this.updateComplaint)
@@ -82,7 +82,7 @@ export class DetailComplaintComponent implements OnInit{
 
   closeComplaint() {
     this.updateComplaint = {
-      status: 'completed',
+      status: 'Completada',
       comment: this.comment
     }
     this.complaint.update(this.idComplaint, this.updateComplaint)

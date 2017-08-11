@@ -14,7 +14,7 @@ export class AddComplaintComponent implements OnInit {
   user: any
   newComplaint: any = {
     user: this.session.user._id,
-    status: 'sent',
+    status: 'Enviada',
   }
   isComplaintSent: Boolean = false
   constructor(

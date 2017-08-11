@@ -1,16 +1,18 @@
+<div class="all-content-complaint">
 <div class="container" *ngIf="session.user.role !== 'User'">
-  <div class="row">
-    <div class="col s12 m5 card-list list-box">
-      <app-list-complaint></app-list-complaint>
-    </div>
+    <div class="row">
+      <div class="col s12 m5 card-list list-box">
+        <app-list-complaint></app-list-complaint>
+      </div>
 
-    <div class="col s12 m2">
+      <div class="col s12 m2">
+      </div>
+      <div class="col s12 m5 card-list list-box">
+        <app-list-alert></app-list-alert>
+      </div>
     </div>
-    <div class="col s12 m5 card-list list-box">
-      <app-list-alert></app-list-alert>
-    </div>
+    <button class="btn" (click)="alert()">Alerta</button>
   </div>
-  <button class="btn" (click)="alert()">Alerta</button>
 </div>
 
 <div class="s12" *ngIf="session.user.role == 'User'">

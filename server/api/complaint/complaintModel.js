@@ -15,9 +15,9 @@ const complaintSchema = new Schema({
 	'status' : {
 		type: String,
 		enum: [
-			'sent',
-			'inProcess',
-			'completed'
+			'Enviada',
+			'En proceso',
+			'Completada'
 		],
 		default: 'sent'
 	},
