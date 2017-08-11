@@ -22,6 +22,7 @@ export class DetailComplaintComponent implements OnInit{
   ) { }
 
   ngOnInit() {
+    this.time = setTimeout(() => {
       this.route.params.subscribe(params => {
         if (params['id'] != null) {
           this.idComplaint = params['id']
@@ -33,6 +34,7 @@ export class DetailComplaintComponent implements OnInit{
             )
         }
       })
+    }, 2000);
   }
 
 

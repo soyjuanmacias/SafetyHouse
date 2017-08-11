@@ -1,7 +1,6 @@
-<a [routerLink]="['/complaint/list']"> Go back </a>
+<!-- <a [routerLink]="['/complaint/list']"> Go back </a>
 <br>
 <hr>
-<div *ngIf="oneComplaint">
   <h2>Título</h2>
   <h2>{{oneComplaint.title}}</h2>
   <hr>
@@ -29,5 +28,47 @@
   </div>
   <div *ngIf="oneComplaint.status === 'completed'">
     <button class="btn" (click)="openComplaint()">Re-abrir denuncia</button>
+  </div> -->
+
+  <div *ngIf="oneComplaint">
+<div class="expanding-component">
+  <div class="all-content-complaint">
+    <div class="cartel-arriba">
+      <h5 class="complaint-text">[ Estado: {{oneComplaint.status}} ] - {{oneComplaint.title}}</h5>
+    </div>
+    <div class="container">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="http://www.industrialrelations.nsw.gov.au/mobile0c9a66/common_res/redesign_ir/images/rebrand/icon_images/Complaint_icon.png" class="img-avatar circle">
+          <span class="title"><b>Estado: {{oneComplaint.status}}</b></span>
+          <b><h5 class="black-text"><b>Denuncia:</b> {{oneComplaint.title}}</h5></b>
+            <p> <b>Fecha:</b> {{oneComplaint.date | date: 'dd/MM/yyyy'}}
+            <br> <b>Descripción de los hechos:</b> <p>{{oneComplaint.description}}</p>
+          <a href="#" class="secondary-content"><i class="material-icons blue-text darken-3">event_note</i></a>
+          <br>
+          <div *ngIf="oneComplaint.comment !== ''">
+            <h5>Actuación por parte de Seguridad:</h5>
+            <b><p>{{oneComplaint.comment}}</p></b>
+          </div>
+          <button *ngIf="oneComplaint.status === 'sent'" class="btn blue darken-3" (click)="conmuteComplainState()">Iniciar trámite</button>
+          <div *ngIf="oneComplaint.status === 'inProcess'">
+            <textarea class="materialize-textarea blue-text darken-3" [(ngModel)]="comment" rows="4" cols="50" placeholder="Si escribes algo nuevo, sustituirás el antiguo comentario de actuación." value=""></textarea>
+            <br>
+            <button *ngIf="oneComplaint.status === 'inProcess'" class="btn blue darken-3" (click)="closeComplaint()">Cerrar denuncia</button>
+          </div>
+          <div *ngIf="oneComplaint.status === 'completed'">
+            <button class="btn blue darken-3" (click)="openComplaint()">Re-abrir denuncia</button>
+          </div>
+        </li>
+      </ul>
+
   </div>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+</div>
+
+
+
+
 </div>
