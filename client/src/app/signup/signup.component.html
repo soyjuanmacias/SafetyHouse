@@ -1,4 +1,4 @@
-<a [routerLink]="['../']"> Go back </a>
+<!-- <a [routerLink]="['../']"> Go back </a>
 <br>
 <hr>
 <h2> Signup </h2>
@@ -35,4 +35,90 @@
 <br>
 <button (click)="signup()"> Registrar usuario </button>
 <br>
-<p class="error"> {{ error }} </p>
+<p class="error"> {{ error }} </p> -->
+
+
+
+<div class="expanding-component">
+  <div class="all-content-complaint">
+    <div class="cartel-arriba">
+      <p class="complaint-text">REGISTRAR NUEVO USUARIO</p>
+¡    </div>
+    <div class="container">
+      <br>
+      <br>
+      <div class="title-div">
+        <h5>Nombre</h5>
+        <div class="input-field col s6">
+          <i class="small white-text material-icons prefix">looks_one</i>
+          <input type="text" id="icon_title" class="white-text" [(ngModel)]="newUser.name">
+          <label for="icon_title">Nombre</label>
+        </div>
+      </div>
+      <div class="location-div">
+
+      </div>
+      <div class="date-div">
+        <h5>Apellidos</h5>
+        <div class="input-field col s6">
+          <i class="small material-icons white-text prefix">looks_two</i>
+          <input id="date" type="text" class="white-text" [(ngModel)]="newUser.lastName">
+          <label for="icon_date">Introduce los apellidos</label>
+        </div>
+      </div>
+      <div class="hour-div">
+        <h5>Calle</h5>
+        <div class="input-field col s6">
+          <i class="small material-icons prefix white-text">looks_3</i>
+          <input type="text" class="white-text" id="icon_hour" [(ngModel)]="newUser.street">
+          <label for="icon_hour">Calle de residencia</label>
+        </div>
+      </div>
+      <div class="hechos-div">
+        <h5>Número</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_4</i>
+          <input type="number" class="white-text" id="icon_hour" [(ngModel)]="newUser.number">
+          <label for="icon_description">Número de la vivienda</label>
+        </div>
+      </div>
+      <div class="hechos-div">
+        <h5>Email</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_5</i>
+          <input type="text" class="white-text" id="icon_hour" [(ngModel)]="newUser.email">
+          <label for="icon_description">Correo electrónico</label>
+        </div>
+      </div>
+      <div class="hechos-div">
+        <h5>Contraseña</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_6</i>
+          <input type="password" class="white-text" [(ngModel)]="newUser.password">
+          <label for="icon_description">Introduce la contraseña</label>
+        </div>
+      </div>
+      <div class="hechos-div">
+        <h5>Teléfono</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">contact_phone</i>
+          <input type="number" class="white-text" id="icon_hour" [(ngModel)]="newUser.telephone">
+          <label for="icon_description">Número de teléfono</label>
+        </div>
+      </div>
+      <br><br>
+      <div class="button-send">
+        <button class="btn btn-send-complaint" (click)="signup()">Crear usuario</button>
+      </div>
+      <br>
+      <div class="button-back button-send-complaint">
+        <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+        <br><br><br><br><br>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+</div>

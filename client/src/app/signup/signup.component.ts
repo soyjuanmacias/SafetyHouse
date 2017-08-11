@@ -31,6 +31,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
+    this.newUser.role = 'User'
     this.newUser.username = this.newUser.email
     this.session.signup(this.newUser)
       .subscribe(
