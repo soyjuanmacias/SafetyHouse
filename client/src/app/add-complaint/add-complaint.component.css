@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+.expanding-component {
+  height: 100%;
+}
+
 .complaint-element {
   border: 2px solid grey;
   margin: 20px;

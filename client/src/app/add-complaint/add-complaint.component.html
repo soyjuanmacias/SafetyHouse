@@ -1,53 +1,58 @@
-<div class="all-content-complaint">
-  <div class="cartel-arriba">
-    <p class="complaint-text">DENUNCIAR UN HECHO</p>
-    <!-- <p class="complaint-text">DENUNCIAR UN HECHO</p> -->
-  </div>
-<div class="container">
-    <br>
-    <br>
-    <div class="title-div">
-      <h5>Título</h5>
-      <div class="input-field col s6">
-        <i class="small white-text material-icons prefix">looks_one</i>
-        <input type="text" id="icon_title" class="white-text" [(ngModel)]="newComplaint.title">
-        <label for="icon_title">¿Qué ha ocurrido?</label>
-      </div>
+<div class="expanding-component">
+  <div class="all-content-complaint">
+    <div class="cartel-arriba">
+      <p class="complaint-text">DENUNCIAR UN HECHO</p>
+      <!-- <p class="complaint-text">DENUNCIAR UN HECHO</p> -->
     </div>
-    <div class="location-div">
+    <div class="container">
+      <br>
+      <br>
+      <div class="title-div">
+        <h5>Título</h5>
+        <div class="input-field col s6">
+          <i class="small white-text material-icons prefix">looks_one</i>
+          <input type="text" id="icon_title" class="white-text" [(ngModel)]="newComplaint.title">
+          <label for="icon_title">¿Qué ha ocurrido?</label>
+        </div>
+      </div>
+      <div class="location-div">
 
-    </div>
-    <div class="date-div">
-      <h5>Fecha</h5>
-      <div class="input-field col s6">
-        <i class="small material-icons white-text prefix">looks_two</i>
-        <input id="date" type="text" materialize="pickadate" class="datepicker white-text" [(ngModel)]="newComplaint.date">
-        <label for="icon_date">¿Cuando ha ocurrido?</label>
       </div>
-    </div>
-    <div class="hour-div">
-      <h5>Hora</h5>
-      <div class="input-field col s6">
-        <i class="small material-icons prefix white-text">looks_3</i>
-        <input type="text" class="timepicker white-text" id="icon_hour" [(ngModel)]="newComplaint.hour">
-        <label for="icon_hour">¿A qué hora ha ocurrido?</label>
+      <div class="date-div">
+        <h5>Fecha</h5>
+        <div class="input-field col s6">
+          <i class="small material-icons white-text prefix">looks_two</i>
+          <input id="date" type="text" materialize="pickadate" class="datepicker white-text" [(ngModel)]="newComplaint.date">
+          <label for="icon_date">¿Cuando ha ocurrido?</label>
+        </div>
       </div>
-    </div>
-    <div class="hechos-div">
-      <h5>Hechos</h5>
-      <div class="input-field col s6 white-text">
-        <i class="small material-icons prefix">looks_4</i>
-        <textarea class="materialize-textarea" rows="8" cols="40" type="text" id="icon_description"[(ngModel)]="newComplaint.description"></textarea>
-        <label for="icon_description">¿Qué ha pasado? Escribe aquí los hechos</label>
+      <div class="hour-div">
+        <h5>Hora</h5>
+        <div class="input-field col s6">
+          <i class="small material-icons prefix white-text">looks_3</i>
+          <input type="text" class="timepicker white-text" id="icon_hour" [(ngModel)]="newComplaint.hour">
+          <label for="icon_hour">¿A qué hora ha ocurrido?</label>
+        </div>
       </div>
+      <div class="hechos-div">
+        <h5>Hechos</h5>
+        <div class="input-field col s6 white-text">
+          <i class="small material-icons prefix">looks_4</i>
+          <textarea class="materialize-textarea" rows="8" cols="40" type="text" id="icon_description" [(ngModel)]="newComplaint.description"></textarea>
+          <label for="icon_description">¿Qué ha pasado? Escribe aquí los hechos</label>
+        </div>
+      </div>
+      <div class="button-send" *ngIf="!isComplaintSent">
+        <button class="btn btn-send-complaint" (click)="addComplaint()">Enviar</button>
+      </div>
+      <div class="button-back button-send-complaint" *ngIf="isComplaintSent">
+        <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+        <br><br><br><br><br>
+      </div>
+      <br><br>
     </div>
-    <div class="button-send" *ngIf="!isComplaintSent">
-      <button class="btn btn-send-complaint" (click)="addComplaint()">Enviar</button>
-    </div>
-    <div class="button-back button-send-complaint" *ngIf="isComplaintSent">
-      <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
-      <br><br><br><br><br>
-    </div>
-    <br><br>
   </div>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
 </div>

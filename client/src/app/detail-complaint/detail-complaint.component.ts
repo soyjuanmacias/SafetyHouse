@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ComplaintService, Complaint } from '../../services/complaint.service'
 import { Router, ActivatedRoute } from '@angular/router'
 
@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router'
   templateUrl: './detail-complaint.component.html',
   styleUrls: ['./detail-complaint.component.css']
 })
-export class DetailComplaintComponent implements OnInit, OnDestroy{
+export class DetailComplaintComponent implements OnInit{
   idComplaint: any
   oneComplaint: any
   updateComplaint: any
@@ -22,28 +22,19 @@ export class DetailComplaintComponent implements OnInit, OnDestroy{
   ) { }
 
   ngOnInit() {
-    // this.time = setInterval(() => {
-    //   this.route.params.subscribe(params => {
-    //     if (params['id'] != null) {
-    //       this.idComplaint = params['id']
-    //       this.complaint.showComplaint(this.idComplaint)
-    //         .subscribe(
-    //           (complaint) => {
-    //             this.oneComplaint = this.complaint.complaint
-    //           }
-    //         )
-    //     }
-    //   })
-    // }, 1 * 1000)
-    // this.complaint.getCreateComplaintEmitter()
-    //   .subscribe(
-    //
-    //   )
+      this.route.params.subscribe(params => {
+        if (params['id'] != null) {
+          this.idComplaint = params['id']
+          this.complaint.showComplaint(this.idComplaint)
+            .subscribe(
+              (complaint) => {
+                this.oneComplaint = this.complaint.complaint
+              }
+            )
+        }
+      })
   }
 
-ngOnDestroy() {
-  // clearInterval(this.time)
-}
 
   changeStatus() {
     if (this.oneComplaint.status == 'inProcess') {
