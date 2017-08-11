@@ -19,6 +19,8 @@
 }
 
 .logo {
+  background-image: url(../../assets/logo.jpg);
+  background-size: cover;
   position: relative;
   height: 18vh;
   border: 2px, white;

@@ -1,5 +1,9 @@
 <div class="all-content-contact">
-  <br><br>
+  <br>
+  <div class="cartel-arriba">
+    <p class="contact-text">LISTADO DE USUARIOS</p>
+  </div>
+  <br>
   <div class="container">
     <div class="search-user input-field">
       <i class="small white-text material-icons prefix">location_searching</i>
@@ -10,19 +14,25 @@
     <ul *ngFor="let user of userList | filter : 'street' : pattern">
       <ul class="collection">
         <li class="collection-item avatar">
+          <img src="https://diegoangeles.com/wp-content/themes/privado/img/avatar.png" class="img-avatar circle">
           <span class="title"><b>{{user.name}}</b></span>
-          <p>{{user.lastName}}
-            <br>
-            Email: {{user.email}}
-            <br>
-            Dirección: Calle: {{ user.street }}, Nº: {{ user.number }}
-            <br>
-            Teléfono de contacto: {{user.telephone}}
-            <br>
-            Perfil: {{user.role}}</p>
-            <a href="#" class="secondary-content"><i class="material-icons">verified_user</i></a>
-          </li>
-        </ul>
+          <p><b>{{user.lastName}}</b>
+            <br> <b>Email:</b> {{user.email}}
+            <br> Dirección: Calle: {{ user.street }}, Nº: {{ user.number }}
+            <br> Teléfono de contacto: {{user.telephone}}
+            <br> Perfil: {{user.role}}</p>
+          <a href="#" class="secondary-content"><i class="material-icons blue-text darken-3">verified_user</i></a>
+          <br>
+          <button [routerLink]="['']" class="btn btn-contacto blue darken-3"> Contactar con {{user.name}} </button>
+        </li>
       </ul>
+    </ul>
+    <div class="button-back button-send-complaint">
+      <button class="btn btn-send-complaint" [routerLink]="['']">Volver atrás</button>
+      <br><br><br><br><br>
     </div>
   </div>
+  <br>
+  <br>
+  <br><br><br><br><br><br>
+</div>
