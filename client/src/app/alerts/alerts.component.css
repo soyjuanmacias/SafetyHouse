@@ -1,0 +1,80 @@
+.card-list {
+  margin-top: 20px;
+  height: 650px;
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  box-shadow: 1px 2px 15px 0 #c3c3c3;
+
+}
+
+.all-content-complaint {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  height: 100vh;
+}
+
+.complaint-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list-box {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  background: cover;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.first-menu {
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  background-size: cover;
+  position: relative;
+  height: 18vh;
+  border: 2px, white;
+}
+
+.complaint-div {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  background-size: cover;
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  height: 28vh;
+  position: relative;
+}
+.alert-div {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  background-size: cover;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  height: 28vh;
+  position: relative;
+}
+.contact-div {
+  background-image: linear-gradient(45deg, #000408, #001d45);
+  background-size: cover;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  height: 28vh;
+  position: relative;
+}
+
+.h4-title-center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+	font-weight: 600;
+}

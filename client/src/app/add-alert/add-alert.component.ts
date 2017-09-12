@@ -10,7 +10,7 @@ import { AlertsService } from '@jaspero/ng2-alerts'
 })
 export class AddAlertComponent implements OnInit {
   user: any
-  newAlert: Object = {
+  newAlert: any = {
     user: this.session.user._id,
     status: 'sent',
   }

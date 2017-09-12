@@ -1,6 +1,26 @@
-<a [routerLink]="['../']"> Go back </a>
+<!-- <a [routerLink]="['../']"> Go back </a>
 <br>
 <hr>
 <a [routerLink]="['list']"> List all houses </a>
 <br><br>
-<a [routerLink]="['add']"> Create new house </a>
+<a [routerLink]="['add']"> Create new house </a> -->
+
+
+<div class="all-content-complaint">
+  <div class="container">
+  <div class="cartel-arriba">
+    <p class="complaint-text">VIVIENDAS</p>
+  </div>
+  <div class="first-menu">
+    <div [routerLink]="['list']" class="complaint-div">
+      <h4 class="h4-title-center">VER URBANIZACIÓN</h4>
+    </div>
+    <div [routerLink]="['add']" class="alert-div">
+      <h4 class="h4-title-center">CREAR NUEVA VIVIENDA</h4>
+    </div>
+    <div [routerLink]="['']" class="contact-div">
+      <h4 class="h4-title-center">VOLVER ATRÁS</h4>
+    </div>
+  </div>
+</div>
+</div>

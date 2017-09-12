@@ -1,6 +1,26 @@
-<a [routerLink]="['../']"> Go back </a>
+<!-- <a [routerLink]="['../']"> Go back </a>
 <br>
 <hr>
 <a [routerLink]="['security']"> SEGURIDAD </a>
 <br><br>
-<a [routerLink]="['users']"> VECINOS </a>
+<a [routerLink]="['users']"> VECINOS </a> -->
+
+
+<div class="all-content-complaint">
+  <div class="container">
+  <div class="cartel-arriba">
+    <p class="complaint-text">CONTACTAR</p>
+  </div>
+  <div class="first-menu">
+    <div [routerLink]="['security']" class="complaint-div">
+      <h4 class="h4-title-center">SEGURIDAD</h4>
+    </div>
+    <div [routerLink]="['users']" class="alert-div">
+      <h4 class="h4-title-center">VECINOS</h4>
+    </div>
+    <div [routerLink]="['/contact']" class="contact-div">
+      <h4 class="h4-title-center">VOLVER ATRÁS</h4>
+    </div>
+  </div>
+</div>
+</div>
